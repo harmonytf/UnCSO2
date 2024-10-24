@@ -252,7 +252,7 @@ Qt::ItemFlags PkgFileModel::flags( const QModelIndex& index ) const
         return Qt::ItemIsEnabled | Qt::ItemIsSelectable | defaultFlags;
     }
 
-    return NULL;
+    return Qt::NoItemFlags;
 }
 
 std::vector<std::pair<ArchiveBaseNode*, int>> PkgFileModel::GrabOldNodes(

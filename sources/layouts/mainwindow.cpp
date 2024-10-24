@@ -206,7 +206,7 @@ void CMainWindow::CreateRecentFilesMenu()
 void CMainWindow::UpdateRecentFileActions()
 {
     const int numRecentFiles =
-        std::min( this->m_RecentFileNames.size(), MAINWIN_RECENT_ITEMS_NUM );
+        std::min<int>( this->m_RecentFileNames.size(), MAINWIN_RECENT_ITEMS_NUM );
 
     if ( numRecentFiles == 0 )
     {

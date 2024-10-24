@@ -72,12 +72,9 @@ endif()
 add_subdirectory("libuncso2")
 
 find_package(
-  Qt5
+  Qt6
   COMPONENTS Widgets
   REQUIRED)
-if(WIN32)
-  find_package(Qt5 COMPONENTS WinExtras REQUIRED)
-endif()
 
 # Auto generate Qt files
 set(CMAKE_AUTOMOC ON)
@@ -175,7 +172,7 @@ source_group("Resources Files" FILES ${UNCSO2_RESOURCES})
 source_group("Resources Files\\Breeze" FILES ${UNCSO2_RESOURCES_BREEZE})
 source_group("Resources Files\\Layouts" FILES ${UNCSO2_RESOURCES_LAYOUTS})
 
-qt5_add_binary_resources(icons-breeze ${UNCSO2_RESOURCES_BREEZE})
+qt_add_binary_resources(icons-breeze ${UNCSO2_RESOURCES_BREEZE})
 
 file(
   GLOB
@@ -189,10 +186,10 @@ file(
   ${UNCSO2_RESOURCES_LAYOUTS}
   ${UNCSO2_RESOURCES_WIN32})
 
-qt5_add_resources(UNCSO2_ALL_SOURCES ${UNCSO2_RESOURCES})
+qt_add_resources(UNCSO2_ALL_SOURCES ${UNCSO2_RESOURCES})
 
-# force c++17 standard
-set(CMAKE_CXX_STANDARD 17)
+# force c++20 standard
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #
@@ -211,7 +208,7 @@ add_dependencies(uc2 icons-breeze)
 # Enable all warnings
 #
 if(MSVC)
-  target_compile_options(uc2 PRIVATE /W4 /WX)
+  target_compile_options(uc2 PRIVATE /DWIN32 /D_WINDOWS /W4 /WX /EHsc)
 else()
   target_compile_options(uc2 PRIVATE -Wall -Wextra -Wconversion -pedantic)
   # target_compile_options(uc2 PRIVATE -g)
@@ -256,9 +253,5 @@ endif()
 target_include_directories(uc2 PRIVATE ${PKG_INCLUDE_DIR})
 target_link_libraries(uc2 uncso2)
 
-# link Qt5
-target_include_directories(uc2 PRIVATE ${Qt5Widgets_INCLUDE_DIRS})
-target_link_libraries(uc2 Qt5::Widgets)
-if(WIN32)
-  target_link_libraries(uc2 Qt5::WinExtras)
-endif()
+# link Qt6
+target_link_libraries(uc2 Qt::Widgets)
