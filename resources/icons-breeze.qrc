@@ -1,8 +1,6 @@
-<?xml version="1.0" ?>
-<RCC version="1.0">
-    <qresource prefix="icons/Breeze">
+<RCC>
+    <qresource prefix="/icons/Breeze">
         <file alias="index.theme">../external/breeze-icons/icons/index.theme</file>
-        <!-- icons -->
         <file alias="actions/16/application-exit.svg">../external/breeze-icons/icons/actions/16/application-exit.svg</file>
         <file alias="actions/16/archive-extract.svg">../external/breeze-icons/icons/actions/16/archive-extract.svg</file>
         <file alias="actions/16/document-decrypt.svg">../external/breeze-icons/icons/actions/16/document-decrypt.svg</file>
@@ -154,7 +152,7 @@
         <file alias="mimetypes/16/message-partial.svg">../external/breeze-icons/icons/mimetypes/16/message-partial.svg</file>
         <file alias="mimetypes/16/image-jpeg2000.svg">../external/breeze-icons/icons/mimetypes/16/image-jpeg.svg</file>
         <file alias="mimetypes/16/text-rtf.svg">../external/breeze-icons/icons/mimetypes/16/text-rtf.svg</file>
-        <file alias="mimetypes/16/application-vnd.rar.svg">../external/breeze-icons/icons/mimetypes/16/./application-x-tar.svg</file>
+        <file alias="mimetypes/16/application-vnd.rar.svg">../external/breeze-icons/icons/mimetypes/16/application-x-tar.svg</file>
         <file alias="mimetypes/16/application-vnd.sun.xml.writer.template.svg">../external/breeze-icons/icons/mimetypes/16/application-vnd.oasis.opendocument.text-template.svg</file>
         <file alias="mimetypes/16/x-media-podcast.svg">../external/breeze-icons/icons/mimetypes/16/x-media-podcast.svg</file>
         <file alias="mimetypes/16/image-x-compressed-xcf.svg">../external/breeze-icons/icons/mimetypes/16/image-x-xcf.svg</file>
@@ -163,7 +161,7 @@
         <file alias="mimetypes/16/text-x-changelog.svg">../external/breeze-icons/icons/mimetypes/16/text-x-changelog.svg</file>
         <file alias="mimetypes/16/application-vnd.oasis.opendocument.chart.svg">../external/breeze-icons/icons/mimetypes/16/application-vnd.oasis.opendocument.chart.svg</file>
         <file alias="mimetypes/16/text-x-python.svg">../external/breeze-icons/icons/mimetypes/16/text-x-python.svg</file>
-        <file alias="mimetypes/16/application-x-rar.svg">../external/breeze-icons/icons/mimetypes/16/./application-x-tar.svg</file>
+        <file alias="mimetypes/16/application-x-rar.svg">../external/breeze-icons/icons/mimetypes/16/application-x-tar.svg</file>
         <file alias="mimetypes/16/application-x-font-type1.svg">../external/breeze-icons/icons/mimetypes/16/application-x-font-type1.svg</file>
         <file alias="mimetypes/16/application-vnd.visio.svg">../external/breeze-icons/icons/mimetypes/16/application-vnd.visio.svg</file>
         <file alias="mimetypes/16/text-calendar.svg">../external/breeze-icons/icons/mimetypes/16/x-office-calendar.svg</file>
@@ -360,7 +358,7 @@
         <file alias="mimetypes/16/text-x-patch.svg">../external/breeze-icons/icons/mimetypes/16/text-x-patch.svg</file>
         <file alias="mimetypes/16/text-x-install.svg">../external/breeze-icons/icons/mimetypes/16/text-x-install.svg</file>
         <file alias="mimetypes/16/application-xmind.svg">../external/breeze-icons/icons/mimetypes/16/application-xmind.svg</file>
-        <file alias="mimetypes/16/text-x-rust.svg">../external/breeze-icons/icons/mimetypes/16/./text-rust.svg</file>
+        <file alias="mimetypes/16/text-x-rust.svg">../external/breeze-icons/icons/mimetypes/16/text-rust.svg</file>
         <file alias="mimetypes/16/virtualbox-ovf.svg">../external/breeze-icons/icons/mimetypes/16/virtualbox-ovf.svg</file>
         <file alias="mimetypes/16/application-x-java-applet.svg">../external/breeze-icons/icons/mimetypes/16/application-x-java.svg</file>
         <file alias="mimetypes/16/application-vnd.ms-excel.sheet.macroenabled.12.svg">../external/breeze-icons/icons/mimetypes/16/application-vnd.ms-excel.addin.macroenabled.12.svg</file>
@@ -618,7 +616,7 @@
         <file alias="mimetypes/22/message-partial.svg">../external/breeze-icons/icons/mimetypes/22/message-partial.svg</file>
         <file alias="mimetypes/22/image-jpeg2000.svg">../external/breeze-icons/icons/mimetypes/22/image-jpeg.svg</file>
         <file alias="mimetypes/22/text-rtf.svg">../external/breeze-icons/icons/mimetypes/22/text-rtf.svg</file>
-        <file alias="mimetypes/22/application-vnd.rar.svg">../external/breeze-icons/icons/mimetypes/22/./application-x-tar.svg</file>
+        <file alias="mimetypes/22/application-vnd.rar.svg">../external/breeze-icons/icons/mimetypes/22/application-x-tar.svg</file>
         <file alias="mimetypes/22/application-vnd.sun.xml.writer.template.svg">../external/breeze-icons/icons/mimetypes/22/application-vnd.oasis.opendocument.text-template.svg</file>
         <file alias="mimetypes/22/x-media-podcast.svg">../external/breeze-icons/icons/mimetypes/22/x-media-podcast.svg</file>
         <file alias="mimetypes/22/image-x-compressed-xcf.svg">../external/breeze-icons/icons/mimetypes/22/image-x-xcf.svg</file>
@@ -627,7 +625,7 @@
         <file alias="mimetypes/22/text-x-changelog.svg">../external/breeze-icons/icons/mimetypes/22/text-x-changelog.svg</file>
         <file alias="mimetypes/22/application-vnd.oasis.opendocument.chart.svg">../external/breeze-icons/icons/mimetypes/22/application-vnd.oasis.opendocument.chart.svg</file>
         <file alias="mimetypes/22/text-x-python.svg">../external/breeze-icons/icons/mimetypes/22/text-x-python.svg</file>
-        <file alias="mimetypes/22/application-x-rar.svg">../external/breeze-icons/icons/mimetypes/22/./application-x-tar.svg</file>
+        <file alias="mimetypes/22/application-x-rar.svg">../external/breeze-icons/icons/mimetypes/22/application-x-tar.svg</file>
         <file alias="mimetypes/22/application-x-font-type1.svg">../external/breeze-icons/icons/mimetypes/22/application-x-font-type1.svg</file>
         <file alias="mimetypes/22/application-vnd.visio.svg">../external/breeze-icons/icons/mimetypes/22/application-vnd.visio.svg</file>
         <file alias="mimetypes/22/text-calendar.svg">../external/breeze-icons/icons/mimetypes/22/x-office-calendar.svg</file>
@@ -824,7 +822,7 @@
         <file alias="mimetypes/22/text-x-patch.svg">../external/breeze-icons/icons/mimetypes/22/text-x-patch.svg</file>
         <file alias="mimetypes/22/text-x-install.svg">../external/breeze-icons/icons/mimetypes/22/text-x-install.svg</file>
         <file alias="mimetypes/22/application-xmind.svg">../external/breeze-icons/icons/mimetypes/22/application-xmind.svg</file>
-        <file alias="mimetypes/22/text-x-rust.svg">../external/breeze-icons/icons/mimetypes/22/./text-rust.svg</file>
+        <file alias="mimetypes/22/text-x-rust.svg">../external/breeze-icons/icons/mimetypes/22/text-rust.svg</file>
         <file alias="mimetypes/22/virtualbox-ovf.svg">../external/breeze-icons/icons/mimetypes/22/virtualbox-ovf.svg</file>
         <file alias="mimetypes/22/application-x-java-applet.svg">../external/breeze-icons/icons/mimetypes/22/application-x-java.svg</file>
         <file alias="mimetypes/22/application-vnd.ms-excel.sheet.macroenabled.12.svg">../external/breeze-icons/icons/mimetypes/22/application-vnd.ms-excel.addin.macroenabled.12.svg</file>
@@ -1069,7 +1067,7 @@
         <file alias="mimetypes/32/video-x-flic.svg">../external/breeze-icons/icons/mimetypes/32/video-x-generic.svg</file>
         <file alias="mimetypes/32/application-x-gamecube-rom.svg">../external/breeze-icons/icons/mimetypes/32/application-x-apple-diskimage.svg</file>
         <file alias="mimetypes/32/libreoffice-oasis-formula.svg">../external/breeze-icons/icons/mimetypes/32/libreoffice-formula.svg</file>
-        <file alias="mimetypes/32/image-svg+xml.svg">../external/breeze-icons/icons/mimetypes/32/./x-office-drawing.svg</file>
+        <file alias="mimetypes/32/image-svg+xml.svg">../external/breeze-icons/icons/mimetypes/32/x-office-drawing.svg</file>
         <file alias="mimetypes/32/x-office-document.svg">../external/breeze-icons/icons/mimetypes/32/x-office-document.svg</file>
         <file alias="mimetypes/32/application-x-arc.svg">../external/breeze-icons/icons/mimetypes/32/application-x-arc.svg</file>
         <file alias="mimetypes/32/application-dicom.svg">../external/breeze-icons/icons/mimetypes/32/application-dicom.svg</file>
@@ -1082,7 +1080,7 @@
         <file alias="mimetypes/32/message-partial.svg">../external/breeze-icons/icons/mimetypes/32/message-partial.svg</file>
         <file alias="mimetypes/32/image-jpeg2000.svg">../external/breeze-icons/icons/mimetypes/32/image-jpeg.svg</file>
         <file alias="mimetypes/32/text-rtf.svg">../external/breeze-icons/icons/mimetypes/32/text-rtf.svg</file>
-        <file alias="mimetypes/32/application-vnd.rar.svg">../external/breeze-icons/icons/mimetypes/32/./application-x-tar.svg</file>
+        <file alias="mimetypes/32/application-vnd.rar.svg">../external/breeze-icons/icons/mimetypes/32/application-x-tar.svg</file>
         <file alias="mimetypes/32/application-vnd.sun.xml.writer.template.svg">../external/breeze-icons/icons/mimetypes/32/application-vnd.oasis.opendocument.text-template.svg</file>
         <file alias="mimetypes/32/x-media-podcast.svg">../external/breeze-icons/icons/mimetypes/32/x-media-podcast.svg</file>
         <file alias="mimetypes/32/image-x-compressed-xcf.svg">../external/breeze-icons/icons/mimetypes/32/image-x-xcf.svg</file>
@@ -1091,7 +1089,7 @@
         <file alias="mimetypes/32/text-x-changelog.svg">../external/breeze-icons/icons/mimetypes/32/text-x-changelog.svg</file>
         <file alias="mimetypes/32/application-vnd.oasis.opendocument.chart.svg">../external/breeze-icons/icons/mimetypes/32/application-vnd.oasis.opendocument.chart.svg</file>
         <file alias="mimetypes/32/text-x-python.svg">../external/breeze-icons/icons/mimetypes/32/text-x-python.svg</file>
-        <file alias="mimetypes/32/application-x-rar.svg">../external/breeze-icons/icons/mimetypes/32/./application-x-tar.svg</file>
+        <file alias="mimetypes/32/application-x-rar.svg">../external/breeze-icons/icons/mimetypes/32/application-x-tar.svg</file>
         <file alias="mimetypes/32/application-x-font-type1.svg">../external/breeze-icons/icons/mimetypes/32/application-x-font-type1.svg</file>
         <file alias="mimetypes/32/application-vnd.visio.svg">../external/breeze-icons/icons/mimetypes/32/application-vnd.visio.svg</file>
         <file alias="mimetypes/32/text-calendar.svg">../external/breeze-icons/icons/mimetypes/32/x-office-calendar.svg</file>
@@ -1289,7 +1287,7 @@
         <file alias="mimetypes/32/text-x-patch.svg">../external/breeze-icons/icons/mimetypes/32/text-x-patch.svg</file>
         <file alias="mimetypes/32/text-x-install.svg">../external/breeze-icons/icons/mimetypes/32/text-x-install.svg</file>
         <file alias="mimetypes/32/application-xmind.svg">../external/breeze-icons/icons/mimetypes/32/application-xmind.svg</file>
-        <file alias="mimetypes/32/text-x-rust.svg">../external/breeze-icons/icons/mimetypes/32/./text-rust.svg</file>
+        <file alias="mimetypes/32/text-x-rust.svg">../external/breeze-icons/icons/mimetypes/32/text-rust.svg</file>
         <file alias="mimetypes/32/virtualbox-ovf.svg">../external/breeze-icons/icons/mimetypes/32/virtualbox-ovf.svg</file>
         <file alias="mimetypes/32/application-x-java-applet.svg">../external/breeze-icons/icons/mimetypes/32/application-x-java.svg</file>
         <file alias="mimetypes/32/application-vnd.ms-excel.sheet.macroenabled.12.svg">../external/breeze-icons/icons/mimetypes/32/application-vnd.ms-excel.addin.macroenabled.12.svg</file>
@@ -1550,7 +1548,7 @@
         <file alias="mimetypes/64/message-partial.svg">../external/breeze-icons/icons/mimetypes/64/message-partial.svg</file>
         <file alias="mimetypes/64/image-jpeg2000.svg">../external/breeze-icons/icons/mimetypes/64/image-jpeg.svg</file>
         <file alias="mimetypes/64/text-rtf.svg">../external/breeze-icons/icons/mimetypes/64/text-rtf.svg</file>
-        <file alias="mimetypes/64/application-vnd.rar.svg">../external/breeze-icons/icons/mimetypes/64/./application-x-tar.svg</file>
+        <file alias="mimetypes/64/application-vnd.rar.svg">../external/breeze-icons/icons/mimetypes/64/application-x-tar.svg</file>
         <file alias="mimetypes/64/application-vnd.sun.xml.writer.template.svg">../external/breeze-icons/icons/mimetypes/64/application-vnd.oasis.opendocument.text-template.svg</file>
         <file alias="mimetypes/64/x-media-podcast.svg">../external/breeze-icons/icons/mimetypes/64/x-media-podcast.svg</file>
         <file alias="mimetypes/64/image-x-compressed-xcf.svg">../external/breeze-icons/icons/mimetypes/64/image-x-xcf.svg</file>
@@ -1559,7 +1557,7 @@
         <file alias="mimetypes/64/text-x-changelog.svg">../external/breeze-icons/icons/mimetypes/64/text-x-changelog.svg</file>
         <file alias="mimetypes/64/application-vnd.oasis.opendocument.chart.svg">../external/breeze-icons/icons/mimetypes/64/application-vnd.oasis.opendocument.chart.svg</file>
         <file alias="mimetypes/64/text-x-python.svg">../external/breeze-icons/icons/mimetypes/64/text-x-python.svg</file>
-        <file alias="mimetypes/64/application-x-rar.svg">../external/breeze-icons/icons/mimetypes/64/./application-x-tar.svg</file>
+        <file alias="mimetypes/64/application-x-rar.svg">../external/breeze-icons/icons/mimetypes/64/application-x-tar.svg</file>
         <file alias="mimetypes/64/application-x-font-type1.svg">../external/breeze-icons/icons/mimetypes/64/application-x-font-type1.svg</file>
         <file alias="mimetypes/64/application-vnd.visio.svg">../external/breeze-icons/icons/mimetypes/64/application-vnd.visio.svg</file>
         <file alias="mimetypes/64/text-calendar.svg">../external/breeze-icons/icons/mimetypes/64/x-office-calendar.svg</file>
@@ -1756,7 +1754,7 @@
         <file alias="mimetypes/64/text-x-patch.svg">../external/breeze-icons/icons/mimetypes/64/text-x-patch.svg</file>
         <file alias="mimetypes/64/text-x-install.svg">../external/breeze-icons/icons/mimetypes/64/text-x-install.svg</file>
         <file alias="mimetypes/64/application-xmind.svg">../external/breeze-icons/icons/mimetypes/64/application-xmind.svg</file>
-        <file alias="mimetypes/64/text-x-rust.svg">../external/breeze-icons/icons/mimetypes/64/./text-rust.svg</file>
+        <file alias="mimetypes/64/text-x-rust.svg">../external/breeze-icons/icons/mimetypes/64/text-rust.svg</file>
         <file alias="mimetypes/64/virtualbox-ovf.svg">../external/breeze-icons/icons/mimetypes/64/virtualbox-ovf.svg</file>
         <file alias="mimetypes/64/application-x-java-applet.svg">../external/breeze-icons/icons/mimetypes/64/application-x-java.svg</file>
         <file alias="mimetypes/64/application-vnd.ms-excel.sheet.macroenabled.12.svg">../external/breeze-icons/icons/mimetypes/64/application-vnd.ms-excel.addin.macroenabled.12.svg</file>

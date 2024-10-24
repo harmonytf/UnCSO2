@@ -3,7 +3,7 @@
  <class>AboutDialog</class>
  <widget class="QDialog" name="AboutDialog">
   <property name="windowModality">
-   <enum>Qt::NonModal</enum>
+   <enum>Qt::WindowModality::NonModal</enum>
   </property>
   <property name="geometry">
    <rect>
@@ -73,7 +73,7 @@
           <item>
            <spacer name="verticalSpacer_2">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -93,7 +93,6 @@
              <font>
               <family>Noto Sans</family>
               <pointsize>18</pointsize>
-              <weight>50</weight>
               <bold>false</bold>
              </font>
             </property>
@@ -101,14 +100,14 @@
              <string>UnCSO2</string>
             </property>
             <property name="alignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
             </property>
            </widget>
           </item>
           <item>
            <layout class="QFormLayout" name="formLayout">
             <property name="labelAlignment">
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
             </property>
             <item row="0" column="0">
              <widget class="QLabel" name="label_2">
@@ -160,7 +159,7 @@
              <number>0</number>
             </property>
             <property name="elideMode">
-             <enum>Qt::ElideNone</enum>
+             <enum>Qt::TextElideMode::ElideNone</enum>
             </property>
             <widget class="QWidget" name="aboutTab">
              <attribute name="title">
@@ -179,10 +178,10 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A file extractor for Counter-Strike: Online 2's and Titanfall Online's game data.&lt;/p&gt;&lt;p&gt;These games use a proprietary archive format, created by Nexon Co., Ltd.&lt;br/&gt;&lt;br/&gt;It also features automatic decryption of special files and decompression of textures for Counter-Strike: Online 2&lt;span style=&quot; font-style:italic;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;This program's layout is based off KDE's Ark.&lt;/p&gt;&lt;p&gt;You may find its &lt;a href=&quot;https://github.com/Ochii/UnCSO2&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;source code here&lt;/span&gt;&lt;/a&gt;. &lt;a href=&quot;https://github.com/Ochii/libuncso2&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;libuncso2 source code&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;UnCSO2 is distributed under the GPLv3 license.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
-                 <enum>Qt::RichText</enum>
+                 <enum>Qt::TextFormat::RichText</enum>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                 <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
                 </property>
                 <property name="wordWrap">
                  <bool>false</bool>
@@ -205,10 +204,10 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Hack';&quot;&gt;UnCSO2&lt;/span&gt; was tested against Counter-Strike: Online 2 copies from the following regions:&lt;/p&gt;&lt;p&gt;Korea, China, Taiwan and Japan.&lt;/p&gt;&lt;p&gt;It was also tested against Korea's Titanfall Online.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
-                 <enum>Qt::RichText</enum>
+                 <enum>Qt::TextFormat::RichText</enum>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                 <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
                 </property>
                 <property name="openExternalLinks">
                  <bool>true</bool>
@@ -234,10 +233,10 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://leite.xyz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Luís Leite&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Based off ekey's research at at &lt;a href=&quot;https://forum.xentax.com/viewtopic.php?f=21&amp;amp;t=11117&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;XeNTaX's forums&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
-                 <enum>Qt::RichText</enum>
+                 <enum>Qt::TextFormat::RichText</enum>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                 <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
                 </property>
                 <property name="wordWrap">
                  <bool>false</bool>
@@ -266,10 +265,10 @@
                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Hack';&quot;&gt;UnCSO2&lt;/span&gt; uses the following libraries:&lt;br/&gt;&lt;a href=&quot;https://github.com/martinmoene/gsl-lite&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;GSL Lite&lt;/span&gt;&lt;/a&gt; by Martin Moene;&lt;br/&gt;&lt;a href=&quot;https://cgit.kde.org/breeze-icons.git/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Breeze icons&lt;/span&gt;&lt;/a&gt; by the KDE community.&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Hack';&quot;&gt;libuncso2&lt;/span&gt; uses the following libraries:&lt;br/&gt;&lt;a href=&quot;https://www.cryptopp.com/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Crypto++&lt;/span&gt;&lt;/a&gt; by Wei Dai;&lt;br/&gt;&lt;a href=&quot;https://github.com/martinmoene/gsl-lite&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;GSL Lite&lt;/span&gt;&lt;/a&gt; by Martin Moene;&lt;br/&gt;&lt;a href=&quot;https://www.7-zip.org/sdk.html&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;LZMA SDK&lt;/span&gt;&lt;/a&gt; by Igor Parlov;&lt;br/&gt;&lt;a href=&quot;https://github.com/catchorg/Catch2&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Catch2&lt;/span&gt;&lt;/a&gt; by the Catch organization.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Hack';&quot;&gt;libuncso2&lt;/span&gt; also uses code from &lt;a href=&quot;https://github.com/ValveSoftware/source-sdk-2013&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Valve Software&lt;/span&gt;&lt;/a&gt;.&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
-                 <enum>Qt::RichText</enum>
+                 <enum>Qt::TextFormat::RichText</enum>
                 </property>
                 <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                 <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
                 </property>
                 <property name="wordWrap">
                  <bool>false</bool>
@@ -286,7 +285,7 @@
           <item>
            <spacer name="horizontalSpacer">
             <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+             <enum>Qt::Orientation::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -303,7 +302,7 @@
       <item>
        <widget class="QDialogButtonBox" name="buttonBox">
         <property name="standardButtons">
-         <set>QDialogButtonBox::Ok</set>
+         <set>QDialogButtonBox::StandardButton::Ok</set>
         </property>
        </widget>
       </item>

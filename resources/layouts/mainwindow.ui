@@ -63,14 +63,14 @@ border: 2px solid #da4453;
 border-radius: 5px;</string>
       </property>
       <property name="frameShape">
-       <enum>QFrame::NoFrame</enum>
+       <enum>QFrame::Shape::NoFrame</enum>
       </property>
       <property name="frameShadow">
-       <enum>QFrame::Plain</enum>
+       <enum>QFrame::Shadow::Plain</enum>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout_3">
        <property name="sizeConstraint">
-        <enum>QLayout::SetDefaultConstraint</enum>
+        <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
        </property>
        <item>
         <widget class="QTextEdit" name="errorBoxMsg">
@@ -91,26 +91,29 @@ border-radius: 5px;</string>
 border:  0; </string>
          </property>
          <property name="verticalScrollBarPolicy">
-          <enum>Qt::ScrollBarAlwaysOff</enum>
+          <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
          </property>
          <property name="sizeAdjustPolicy">
-          <enum>QAbstractScrollArea::AdjustToContents</enum>
+          <enum>QAbstractScrollArea::SizeAdjustPolicy::AdjustToContents</enum>
          </property>
          <property name="undoRedoEnabled">
           <bool>false</bool>
          </property>
          <property name="lineWrapMode">
-          <enum>QTextEdit::WidgetWidth</enum>
+          <enum>QTextEdit::LineWrapMode::WidgetWidth</enum>
          </property>
          <property name="readOnly">
           <bool>true</bool>
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Noto Sans'; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="placeholderText">
           <string/>
@@ -142,8 +145,7 @@ border:  0; </string>
           <string>...</string>
          </property>
          <property name="icon">
-          <iconset theme="window-close">
-           <normaloff>.</normaloff>.</iconset>
+          <iconset theme="window-close"/>
          </property>
          <property name="checkable">
           <bool>false</bool>
@@ -171,16 +173,16 @@ border:  0; </string>
        <bool>true</bool>
       </property>
       <property name="dragDropMode">
-       <enum>QAbstractItemView::DragDrop</enum>
+       <enum>QAbstractItemView::DragDropMode::DragDrop</enum>
       </property>
       <property name="defaultDropAction">
-       <enum>Qt::IgnoreAction</enum>
+       <enum>Qt::DropAction::IgnoreAction</enum>
       </property>
       <property name="alternatingRowColors">
        <bool>true</bool>
       </property>
       <property name="selectionMode">
-       <enum>QAbstractItemView::ExtendedSelection</enum>
+       <enum>QAbstractItemView::SelectionMode::ExtendedSelection</enum>
       </property>
       <property name="uniformRowHeights">
        <bool>true</bool>
@@ -196,7 +198,7 @@ border:  0; </string>
     <item row="2" column="0">
      <spacer name="horizontalSpacer">
       <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+       <enum>Qt::Orientation::Horizontal</enum>
       </property>
       <property name="sizeHint" stdset="0">
        <size>
@@ -211,7 +213,7 @@ border:  0; </string>
       <item>
        <spacer name="horizontalSpacer_2">
         <property name="orientation">
-         <enum>Qt::Horizontal</enum>
+         <enum>Qt::Orientation::Horizontal</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>
@@ -226,7 +228,6 @@ border:  0; </string>
         <property name="font">
          <font>
           <pointsize>10</pointsize>
-          <weight>75</weight>
           <bold>true</bold>
          </font>
         </property>
@@ -261,7 +262,7 @@ border:  0; </string>
      <x>0</x>
      <y>0</y>
      <width>900</width>
-     <height>30</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuPackage">
@@ -273,8 +274,7 @@ border:  0; </string>
       <string>Open Recent</string>
      </property>
      <property name="icon">
-      <iconset theme="document-open-recent">
-       <normaloff>.</normaloff>.</iconset>
+      <iconset theme="document-open-recent"/>
      </property>
      <addaction name="actionClear_list"/>
     </widget>
@@ -331,7 +331,7 @@ border:  0; </string>
     <bool>false</bool>
    </property>
    <property name="toolButtonStyle">
-    <enum>Qt::ToolButtonTextBesideIcon</enum>
+    <enum>Qt::ToolButtonStyle::ToolButtonTextBesideIcon</enum>
    </property>
    <property name="floatable">
     <bool>true</bool>
@@ -347,8 +347,7 @@ border:  0; </string>
   </widget>
   <action name="action_Open">
    <property name="icon">
-    <iconset theme="document-open">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-open"/>
    </property>
    <property name="text">
     <string>Open</string>
@@ -359,8 +358,7 @@ border:  0; </string>
   </action>
   <action name="action_Quit">
    <property name="icon">
-    <iconset theme="application-exit">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="application-exit"/>
    </property>
    <property name="text">
     <string>Quit</string>
@@ -377,8 +375,7 @@ border:  0; </string>
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="archive-extract">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="archive-extract"/>
    </property>
    <property name="text">
     <string>Extract All</string>
@@ -392,8 +389,7 @@ border:  0; </string>
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-preview">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-preview"/>
    </property>
    <property name="text">
     <string>Preview</string>
@@ -407,8 +403,7 @@ border:  0; </string>
   </action>
   <action name="actionAbout_UnCSO2">
    <property name="icon">
-    <iconset theme="help-about">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="help-about"/>
    </property>
    <property name="text">
     <string>About UnCSO2</string>
@@ -416,8 +411,7 @@ border:  0; </string>
   </action>
   <action name="actionAbout_Qt">
    <property name="icon">
-    <iconset theme="help-about">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="help-about"/>
    </property>
    <property name="text">
     <string>About Qt</string>
@@ -428,8 +422,7 @@ border:  0; </string>
     <bool>false</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-properties">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-properties"/>
    </property>
    <property name="text">
     <string>Properties</string>
@@ -440,8 +433,7 @@ border:  0; </string>
   </action>
   <action name="action_Open_Index">
    <property name="icon">
-    <iconset theme="document-open-folder">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-open-folder"/>
    </property>
    <property name="text">
     <string>Open Index</string>
@@ -458,8 +450,7 @@ border:  0; </string>
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset theme="document-decrypt">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="document-decrypt"/>
    </property>
    <property name="text">
     <string>Decrypt '.e*' files</string>
@@ -473,8 +464,7 @@ border:  0; </string>
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset theme="archive-extract">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="archive-extract"/>
    </property>
    <property name="text">
     <string>Decompress textures</string>
@@ -482,8 +472,7 @@ border:  0; </string>
   </action>
   <action name="action_Extract">
    <property name="icon">
-    <iconset theme="archive-extract">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset theme="archive-extract"/>
    </property>
    <property name="text">
     <string>Extract</string>
