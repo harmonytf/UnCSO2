@@ -10,7 +10,7 @@
 #include "indexkeycollections.hpp"
 #include "miscutils.hpp"
 
-SpecialFileHandler::SpecialFileHandler( gsl::span<std::uint8_t> fileData,
+SpecialFileHandler::SpecialFileHandler( std::span<std::uint8_t> fileData,
                                         fs::path filePath, bool canDecrypt,
                                         bool canDecompress )
     : m_FileData( fileData ), m_FilePath( filePath ),
@@ -20,7 +20,7 @@ SpecialFileHandler::SpecialFileHandler( gsl::span<std::uint8_t> fileData,
 
 SpecialFileHandler::~SpecialFileHandler() {}
 
-gsl::span<std::uint8_t> SpecialFileHandler::ProcessData()
+std::span<std::uint8_t> SpecialFileHandler::ProcessData()
 {
     if ( this->m_bAllowDecryption && this->IsFileEncrypted() )
     {
@@ -49,7 +49,7 @@ bool SpecialFileHandler::IsTextureCompressed() const
     return bIsCompressedTex;
 }
 
-gsl::span<std::uint8_t> SpecialFileHandler::DecryptFile()
+std::span<std::uint8_t> SpecialFileHandler::DecryptFile()
 {
     try
     {
@@ -73,7 +73,7 @@ gsl::span<std::uint8_t> SpecialFileHandler::DecryptFile()
     return {};
 }
 
-gsl::span<std::uint8_t> SpecialFileHandler::DecompressTexture() const
+std::span<std::uint8_t> SpecialFileHandler::DecompressTexture() const
 {
     try
     {

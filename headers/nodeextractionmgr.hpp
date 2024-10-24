@@ -3,8 +3,7 @@
 #include <filesystem>
 #include <unordered_map>
 #include <vector>
-
-#include <gsl/gsl>
+#include <span>
 
 #include <uc2/pkgfile.hpp>
 
@@ -39,9 +38,9 @@ public:
     inline int GetExtractionProgress() const;
 
     // from PkgFileModel
-    bool ExtractNodes( const gsl::span<ArchiveBaseNode*> targetNodes,
+    bool ExtractNodes( const std::span<ArchiveBaseNode*> targetNodes,
                        const fs::path& pkgParentPath );
-    bool ExtractPackages( gsl::span<uc2::PkgFile*> pkgs,
+    bool ExtractPackages( std::span<uc2::PkgFile*> pkgs,
                           const fs::path& pkgParentPath );
 
     bool ExtractSingleFileNode( ArchiveFileNode* pFileNode,
@@ -49,7 +48,7 @@ public:
                                 fs::path& outResultPath );
 
 private:
-    void AddNodes( const gsl::span<ArchiveBaseNode*> nodes,
+    void AddNodes( const std::span<ArchiveBaseNode*> nodes,
                    uc2::PkgFile* ownerPkgFile );
     void AddFileNode( ArchiveFileNode* pFileNode, uc2::PkgFile* ownerPkgFile,
                       fs::path nodeParentDir = {} );
@@ -72,7 +71,7 @@ private:
 
     // from PkgFileModel
     std::vector<uc2::PkgFile*> GetRequiredPkgFiles(
-        const gsl::span<ArchiveBaseNode*> nodes );
+        const std::span<ArchiveBaseNode*> nodes );
 
 private:
     std::vector<uint8_t> m_vLoadedPkgFile;

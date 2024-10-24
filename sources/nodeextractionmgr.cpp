@@ -24,7 +24,7 @@ NodeExtractionMgr::NodeExtractionMgr(
 {
 }
 
-void NodeExtractionMgr::AddNodes( const gsl::span<ArchiveBaseNode*> nodes,
+void NodeExtractionMgr::AddNodes( const std::span<ArchiveBaseNode*> nodes,
                                   uc2::PkgFile* ownerPkgFile )
 {
     std::string szPkgFilename( ownerPkgFile->GetFilename() );
@@ -214,7 +214,7 @@ bool NodeExtractionMgr::WritePkgEntryInternal( uc2::PkgEntry* pEntry,
                                                bool canDecrypt,
                                                bool canDecompress )
 {
-    gsl::span<uint8_t> decryptedBuffer;
+    std::span<uint8_t> decryptedBuffer;
 
     try
     {
@@ -277,7 +277,7 @@ static std::set<std::string_view> GetDirChildrenFiles(
 }
 
 std::vector<uc2::PkgFile*> NodeExtractionMgr::GetRequiredPkgFiles(
-    const gsl::span<ArchiveBaseNode*> nodes )
+    const std::span<ArchiveBaseNode*> nodes )
 {
     std::unordered_set<uc2::PkgFile*> uniquePkgFiles;
 
@@ -315,7 +315,7 @@ std::vector<uc2::PkgFile*> NodeExtractionMgr::GetRequiredPkgFiles(
 }
 
 bool NodeExtractionMgr::ExtractNodes(
-    const gsl::span<ArchiveBaseNode*> targetNodes,
+    const std::span<ArchiveBaseNode*> targetNodes,
     const fs::path& pkgParentPath )
 {
     auto vPkgFiles = this->GetRequiredPkgFiles( targetNodes );
@@ -353,7 +353,7 @@ bool NodeExtractionMgr::ExtractNodes(
     return true;
 }
 
-bool NodeExtractionMgr::ExtractPackages( gsl::span<uc2::PkgFile*> pkgs,
+bool NodeExtractionMgr::ExtractPackages( std::span<uc2::PkgFile*> pkgs,
                                          const fs::path& pkgParentPath )
 {
     for ( auto&& pPkgFile : pkgs )

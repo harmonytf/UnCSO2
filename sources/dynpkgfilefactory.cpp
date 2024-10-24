@@ -3,6 +3,7 @@
 #include <array>
 
 #include <QDebug>
+#include <gsl/gsl>
 
 #include "fsutils.hpp"
 #include "miscutils.hpp"

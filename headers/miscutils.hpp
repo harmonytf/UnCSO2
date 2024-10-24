@@ -2,7 +2,7 @@
 
 #include <cstring>
 #include <filesystem>
-#include <gsl/gsl>
+#include <span>
 #include <string>
 #include <string_view>
 
@@ -20,7 +20,7 @@ inline size_t GenerateHashFromString( const std::string& str )
 
 template <typename DataType, typename DataSizeType,
           typename NoPtrDataType = typename std::remove_pointer<DataType>::type>
-inline gsl::span<NoPtrDataType> PairToSpan(
+inline std::span<NoPtrDataType> PairToSpan(
     std::pair<DataType, DataSizeType> src )
 {
     return { src.first, src.second };

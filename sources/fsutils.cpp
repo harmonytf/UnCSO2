@@ -2,6 +2,7 @@
 
 #include <fstream>
 #include <iostream>
+#include <span>
 
 #include <gsl/gsl>
 
@@ -41,7 +42,7 @@ std::pair<bool, std::vector<uint8_t>> ReadFileToBuffer(
     return { true, std::move( res ) };
 }
 
-bool WriteBufferToFile( const fs::path& filePath, gsl::span<uint8_t> buff )
+bool WriteBufferToFile( const fs::path& filePath, std::span<uint8_t> buff )
 {
     std::ofstream os( filePath, std::ios::binary );
 

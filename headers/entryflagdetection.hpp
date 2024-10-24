@@ -1,5 +1,7 @@
 #pragma once
 
+#include <span>
+
 #include <gsl/gsl>
 
 namespace uc2
@@ -17,7 +19,7 @@ public:
     inline bool IsLzmaTexture() const noexcept;
 
 private:
-    void DetectSpecialTypes( gsl::span<uint8_t> entryData ) noexcept;
+    void DetectSpecialTypes( std::span<uint8_t> entryData ) noexcept;
 
 private:
     bool m_bEncryptedFile;
