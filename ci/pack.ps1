@@ -3,19 +3,21 @@ function CreateDirectory {
     New-Item -ItemType Directory -Path $newDirectory
 }
 
-$curBuildCombo = $env:BUILD_COMBO
-$curConfig = $env:CONFIGURATION
+#$curBuildCombo = $env:BUILD_COMBO
+#$curConfig = $env:CONFIGURATION
+$curCompiler = $env:CI_COMPILER
 
 # only package on Release builds, but don't error out
-if ($curConfig -ne 'Release') {
-    Write-Host 'Non release build detected, exiting packaging script...'
-    exit 0
-}
+#if ($curConfig -ne 'Release') {
+#    Write-Host 'Non release build detected, exiting packaging script...'
+#    exit 0
+#}
 
-$isGccBuild = $curBuildCombo -eq 'linux-gcc'
-$isLinuxClangBuild = $curBuildCombo -eq 'linux-clang'
-$isMingwBuild = $curBuildCombo -eq 'windows-mingw'
-$isMsvcBuild = $curBuildCombo -eq 'windows-msvc'
+$isGccBuild = $curCompiler -eq 'gcc'
+$isClangBuild = $curCompiler -eq 'clang'
+#$isMingwBuild = $curBuildCombo -eq 'windows-mingw'
+#$isMsvcBuild = $curBuildCombo -eq 'windows-msvc'
+$qtVersion = if ($env:QT_VERSION) { $env:QT_VERSION } else { "6.8.0" };
 
 Write-Host "Running packaging script..."
 Write-Host "Current setup build combo is: $curBuildCombo"
@@ -28,7 +30,7 @@ if ($isLinux) {
     Copy-Item ./build/libuncso2/libuncso2.so* -Destination ./build/package/
 
     # copy libcryptopp to the package dir
-    Copy-Item ./build/libuncso2/external/cryptopp/libcryptopp.so* -Destination ./build/package/
+    #Copy-Item ./build/libuncso2/external/cryptopp/libcryptopp.so* -Destination ./build/package/
 
     # copy AppImage prebuilt files
     Copy-Item ./appimage/* -Destination ./build/package/
@@ -38,10 +40,10 @@ if ($isLinux) {
 
 }
 elseif ($isWindows) {
-    if ($isMingwBuild) {
-        # copy crypto++ to the package dir
-        Copy-Item ./build/libuncso2/external/cryptopp/libcryptopp.dll -Destination ./build/package/
-    }
+    #if ($isMingwBuild) {
+    #    # copy crypto++ to the package dir
+    #    Copy-Item ./build/libuncso2/external/cryptopp/libcryptopp.dll -Destination ./build/package/
+    #}
     
     # copy libuncso2 to the package dir
     Copy-Item ./build/libuncso2/*uncso2.dll -Destination ./build/package/
@@ -81,7 +83,7 @@ if ($isLinux) {
     if ($isGccBuild) {
         Move-Item *.AppImage -Destination "UnCSO2-$versionStr-linux64_gcc.AppImage"
     }
-    elseif ($isLinuxClangBuild) {
+    elseif ($isClangBuild) {
         Move-Item *.AppImage -Destination "UnCSO2-$versionStr-linux64_clang.AppImage"
     }
 
@@ -90,37 +92,33 @@ if ($isLinux) {
 elseif ($isWindows) {
     $windeployBin = ''
 
-    if ($isMingwBuild) {
-        $windeployBin = 'C:\Qt\5.14\mingw73_64\bin\windeployqt.exe'
-    }
-    elseif ($isMsvcBuild) {        
-        $windeployBin = 'C:\Qt\5.14\msvc2017_64\bin\windeployqt.exe'
+    if ($env:QT_ROOT_DIR) {
+        $windeployBin = "$env:QT_ROOT_DIR\bin\windeployqt.exe"
     }
     else {        
-        Write-Error 'Unknown build combo detected.'
-        exit 1
+        $windeployBin = "C:\Qt\$qtVersion\msvc2022_64\bin\windeployqt.exe"
     }
 
-    if ($curConfig -eq 'Release') {
-        if ($isMingwBuild) {
-            & $windeployBin ./uc2.exe  
-        }
-        else {
+    #if ($curConfig -eq 'Release') {
+    #    if ($isMingwBuild) {
+    #        & $windeployBin ./uc2.exe  
+    #    }
+    #    else {
             & $windeployBin --release ./uc2.exe  
-        }
-    }
-    else {       
-        & $windeployBin ./uc2.exe  
-    }
+    #    }
+    #}
+    #else {       
+    #    & $windeployBin ./uc2.exe  
+    #}
 
     Pop-Location
 
-    if ($isMingwBuild) {       
-        7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on "UnCSO2-$versionStr-win64_mingw.7z" ./package/*
-    }
-    elseif ($isMsvcBuild) {       
+    #if ($isMingwBuild) {       
+    #    7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on "UnCSO2-$versionStr-win64_mingw.7z" ./package/*
+    #}
+    #elseif ($isMsvcBuild) {       
         7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on "UnCSO2-$versionStr-win64_msvc.7z" ./package/*
-    }
+    #}
 }
 
 Pop-Location

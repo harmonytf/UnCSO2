@@ -16,7 +16,6 @@ if(MSVC)
 endif()
 
 option(UNCSO2_USE_LTO "Use 'Link Time Optimizations'" ON)
-option(UNCSO2_USE_CLANG_FSAPI "Use libc++fs when available" OFF)
 
 set(UNCSO2_ROOT_DIR "${PROJECT_SOURCE_DIR}")
 set(UNCSO2_LIBS_DIR "${UNCSO2_ROOT_DIR}/external")
@@ -63,11 +62,6 @@ endif()
 #
 # find dependencies
 #
-if(UNCSO2_USE_CLANG_FSAPI)
-  set(PKG_USE_CLANG_FSAPI
-      TRUE
-      CACHE BOOL "" FORCE)
-endif()
 
 add_subdirectory("libuncso2")
 
@@ -240,14 +234,6 @@ target_include_directories(uc2 PRIVATE ${UNCSO2_GENERATED_DIR})
 # link libraries
 #
 target_include_directories(uc2 PRIVATE "${UNCSO2_LIB_GSL_DIR}/include")
-
-if(UNCSO2_USE_CLANG_FSAPI)
-  message(STATUS "uc2: Using libc++fs")
-  target_link_libraries(uc2 c++fs)
-elseif(NOT MSVC)
-  message(STATUS "uc2: Using stdlibc++fs")
-  target_link_libraries(uc2 stdc++fs)
-endif()
 
 # link libuncso2
 target_include_directories(uc2 PRIVATE ${PKG_INCLUDE_DIR})

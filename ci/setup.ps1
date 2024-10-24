@@ -1,7 +1,8 @@
 function SetupVsToolsPath {
     # from https://allen-mack.blogspot.com/2008/03/replace-visual-studio-command-prompt.html
 
-    Push-Location 'C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build'
+    Push-Location 'C:\Program Files\Microsoft Visual Studio\2022'
+    Push-Location '.\Community\VC\Auxiliary\Build'
 
     cmd /c "vcvars64.bat&set" |
     ForEach-Object {

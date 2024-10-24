@@ -33,6 +33,7 @@ Those regions are: South Korea, China, Taiwan and Japan.
 ## Building
 
 ### Requirements
+
 - [CMake](https://cmake.org/download/) (must be in PATH)
 - [Qt 6.8](https://www.qt.io/download)
 - A C++20 compile.
@@ -41,7 +42,7 @@ Those regions are: South Korea, China, Taiwan and Japan.
 
 Visual Studio nowadays has built-in integration for CMake projects.
 
-1. File -> Open -> CMake...
+1. File -> Open -> CMake... -> Select CMakeLists.txt
 
 2. Build -> Build All
 
