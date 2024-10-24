@@ -279,7 +279,7 @@ void CMainWindow::SetArchiveOptionsEnabled( bool bEnabled )
 
 void CMainWindow::SetLoadedFilename( std::string_view filename /*= {}*/ )
 {
-    QString windowTitle = QStringLiteral( "UnCSO2" );
+    QString windowTitle = QStringLiteral( "Harmony UnCSO2" );
     QString formattedTitle = windowTitle;
 
     if ( filename.empty() == false )

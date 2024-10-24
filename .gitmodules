@@ -1,6 +1,6 @@
 [submodule "libuncso2"]
 	path = libuncso2
-	url = https://github.com/p0358/libuncso2.git
+	url = https://github.com/harmonytf/libuncso2.git
 [submodule "external/gsl-lite"]
 	path = external/gsl-lite
 	url = https://github.com/martinmoene/gsl-lite.git

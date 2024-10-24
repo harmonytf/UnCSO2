@@ -20,8 +20,8 @@ CUnCSO2App::CUnCSO2App( int& argc, char** argv ) : QApplication( argc, argv )
 
 void CUnCSO2App::SetupSettingsInfo()
 {
-    this->setOrganizationName( "Luís Leite" );
-    this->setOrganizationDomain( "leite.xyz" );
+    this->setOrganizationName( "Harmony" );
+    this->setOrganizationDomain( "harmony.tf" );
     this->setApplicationName( "UnCSO2" );
     this->setApplicationVersion( QStringLiteral( UNCSO2_VERSION ) );
 }

@@ -2,18 +2,17 @@
 
 ![Alt text](./resources/uncso2.svg)
 
-[![Build status](https://ci.appveyor.com/api/projects/status/voewv05x5ate6yoj/branch/master?svg=true)](https://ci.appveyor.com/project/L-Leite/uncso2/branch/master)
-
-A file data extractor for the videogames Counter Strike: Online 2 and Titanfall Online, for Windows and GNU/Linux.
+A file data extractor for the video games Counter Strike: Online 2 and Titanfall Online, for Windows and GNU/Linux.
 
 It uses ekey's reversing work published at [XeNTaX's forums](https://forum.xentax.com/viewtopic.php?f=21&t=11117).
 
 This program's layout is based off KDE's Ark.
 
-It uses [libuncso2](https://github.com/L-Leite/libuncso2) as the back-end library.
+It uses [libuncso2](https://github.com/harmonytf/libuncso2) as the back-end library.
 
-## Download 
-You may download the latest build of UnCSO2 [here](https://github.com/L-Leite/UnCSO2/releases/latest).
+## Download
+
+You may download the latest build of UnCSO2 [here](https://github.com/harmonytf/UnCSO2/releases/latest).
 
 ## Features
 
@@ -34,21 +33,33 @@ Those regions are: South Korea, China, Taiwan and Japan.
 ## Building
 
 ### Requirements
-- [CMake](https://cmake.org/download/) (must be in PATH);
-- [Qt 5.13](https://www.qt.io/download);
-- A C++17 compiler with `std::filesystem` support.
+- [CMake](https://cmake.org/download/) (must be in PATH)
+- [Qt 6.8](https://www.qt.io/download)
+- A C++20 compile.
 
-#### With Visual Studio
+#### With Visual Studio (new way)
+
+Visual Studio nowadays has built-in integration for CMake projects.
+
+1. File -> Open -> CMake...
+
+2. Build -> Build All
+
+You should have the extension Qt Visual Studio Tools installed. It will prompt you to import your Qt install path upon installation, select required Qt version as the default.
 
 You can generate project files for Visual Studio 15 by running the follwing commands:
+
+#### With Visual Studio (old way)
+
+The old way is to generate project files.
 
 ```sh
 # Create and go to the build directory
 mkdir build
 cd build
 
-# Generate oroject files
-cmake -G "Visual Studio 15 2017" -A "x64" ../
+# Generate project files
+cmake -G "Visual Studio 17 2022" -A "x64" ../
 ```
 
 You can then build the solution file `uc2.sln`.
@@ -82,7 +93,7 @@ UnCSO2 uses the following libraries:
 - [GSL Lite](https://github.com/martinmoene/gsl-lite), MIT license.
 - [Breeze Icon Theme](https://cgit.kde.org/breeze-icons.git/), LGPL.
 
-libuncso2 also depends on libraries, see [libuncso2's used libraries](https://github.com/L-Leite/libuncso2/blob/master/README.md#libraries-used) for more information.
+libuncso2 also depends on libraries, see [libuncso2's used libraries](https://github.com/harmonytf/libuncso2/blob/master/README.md#libraries-used) for more information.
 
 ## License
 

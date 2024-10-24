@@ -97,7 +97,7 @@
              </font>
             </property>
             <property name="text">
-             <string>UnCSO2</string>
+             <string>Harmony UnCSO2</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
@@ -175,7 +175,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A file extractor for Counter-Strike: Online 2's and Titanfall Online's game data.&lt;/p&gt;&lt;p&gt;These games use a proprietary archive format, created by Nexon Co., Ltd.&lt;br/&gt;&lt;br/&gt;It also features automatic decryption of special files and decompression of textures for Counter-Strike: Online 2&lt;span style=&quot; font-style:italic;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;This program's layout is based off KDE's Ark.&lt;/p&gt;&lt;p&gt;You may find its &lt;a href=&quot;https://github.com/Ochii/UnCSO2&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;source code here&lt;/span&gt;&lt;/a&gt;. &lt;a href=&quot;https://github.com/Ochii/libuncso2&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;libuncso2 source code&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;UnCSO2 is distributed under the GPLv3 license.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A file extractor for Counter-Strike: Online 2's and Titanfall Online's game data.&lt;/p&gt;&lt;p&gt;These games use a proprietary archive format, created by Nexon Co., Ltd.&lt;br/&gt;&lt;br/&gt;It also features automatic decryption of special files and decompression of textures for Counter-Strike: Online 2&lt;span style=&quot; font-style:italic;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;This program's layout is based off KDE's Ark.&lt;/p&gt;&lt;p&gt;You may find its &lt;a href=&quot;https://github.com/harmonytf/UnCSO2&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;source code here&lt;/span&gt;&lt;/a&gt;. &lt;a href=&quot;https://github.com/harmonytf/libuncso2&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;libuncso2 source code&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;UnCSO2 is distributed under the GPLv3 license.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
                  <enum>Qt::TextFormat::RichText</enum>
@@ -230,7 +230,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://leite.xyz&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;Luís Leite&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Based off ekey's research at at &lt;a href=&quot;https://forum.xentax.com/viewtopic.php?f=21&amp;amp;t=11117&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#2980b9;&quot;&gt;XeNTaX's forums&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://harmony.tf/&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#2980b9;&quot;&gt;Harmony&lt;/span&gt;&lt;/a&gt;'s community fork.&lt;/p&gt;&lt;p&gt;Originally created by &lt;a href=&quot;https://leite.xyz&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#2980b9;&quot;&gt;Luís Leite&lt;/span&gt;.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Updated to Qt6 and fixed Titanfall Online support by &lt;a href=&quot;https://github.com/p0358&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#2980b9;&quot;&gt;p0358&lt;/span&gt;.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Based off ekey's research at at &lt;a href=&quot;https://forum.xentax.com/viewtopic.php?f=21&amp;amp;t=11117&quot;&gt;&lt;span style=&quot;text-decoration: underline; color:#2980b9;&quot;&gt;XeNTaX's forums&lt;/span&gt;&lt;/a&gt;.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="textFormat">
                  <enum>Qt::TextFormat::RichText</enum>
