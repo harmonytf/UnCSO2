@@ -79,19 +79,19 @@ jobs:
         dir:          '/'
         setup-python: false
 
-    - name: Fix env vars if needed
-      uses: actions/github-script@v7
-      with:
-        script: |
-          if (process.env.QT_ROOT_DIR) {
-            core.exportVariable('QT_ROOT_DIR', process.env.QT_ROOT_DIR.replace(/[/\\]bin[/\\]qmake[^/\\]*/i, ""));
-            core.exportVariable('Qt6_DIR', process.env.QT_ROOT_DIR + "/lib/cmake/Qt6");
-            core.addPath(process.env.QT_ROOT_DIR + "/bin");
-          }
-          if (process.env.QT_PLUGIN_PATH)
-            core.exportVariable('QT_PLUGIN_PATH', process.env.QT_PLUGIN_PATH.replace(/[/\\]bin[/\\]qmake[^/\\]*/i, ""));
-          if (process.env.QML2_IMPORT_PATH)
-            core.exportVariable('QML2_IMPORT_PATH', process.env.QML2_IMPORT_PATH.replace(/[/\\]bin[/\\]qmake[^/\\]*/i, ""));
+    #- name: Fix env vars if needed
+    #  uses: actions/github-script@v7
+    #  with:
+    #    script: |
+    #      if (process.env.QT_ROOT_DIR) {
+    #        core.exportVariable('QT_ROOT_DIR', process.env.QT_ROOT_DIR.replace(/[/\\]bin[/\\]qmake[^/\\]*/i, ""));
+    #        core.exportVariable('Qt6_DIR', process.env.QT_ROOT_DIR + "/lib/cmake/Qt6");
+    #        core.addPath(process.env.QT_ROOT_DIR + "/bin");
+    #      }
+    #      if (process.env.QT_PLUGIN_PATH)
+    #        core.exportVariable('QT_PLUGIN_PATH', process.env.QT_PLUGIN_PATH.replace(/[/\\]bin[/\\]qmake[^/\\]*/i, ""));
+    #      if (process.env.QML2_IMPORT_PATH)
+    #        core.exportVariable('QML2_IMPORT_PATH', process.env.QML2_IMPORT_PATH.replace(/[/\\]bin[/\\]qmake[^/\\]*/i, ""));
 
     - name: Configure CMake
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
@@ -125,3 +125,4 @@ jobs:
         path: |
           build/package/
           build/*.7z
+          build/*.AppImage

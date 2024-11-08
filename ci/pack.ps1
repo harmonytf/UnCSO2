@@ -74,17 +74,19 @@ Push-Location ./package
 
 if ($isLinux) {
     # retrieve deployment tool
-    wget -c "https://github.com/probonopd/linuxdeployqt/releases/download/continuous/linuxdeployqt-continuous-x86_64.AppImage"
-    chmod a+x linuxdeployqt-continuous-x86_64.AppImage
+    wget -c "https://github.com/linuxdeploy/linuxdeploy/releases/download/continuous/linuxdeploy-x86_64.AppImage"
+    wget -c "https://github.com/linuxdeploy/linuxdeploy-plugin-qt/releases/download/continuous/linuxdeploy-plugin-qt-x86_64.AppImage"
+    chmod a+x linuxdeploy-x86_64.AppImage
+    chmod a+x linuxdeploy-plugin-qt-x86_64.AppImage
 
     $env:VERSION = $versionStr;
-    ./linuxdeployqt-continuous-x86_64.AppImage ./uc2 -bundle-non-qt-libs "-extra-plugins=iconengines,platformthemes,styles" -appimage
+    ./linuxdeploy-x86_64.AppImage --appdir=./ --desktop-file=UnCSO2.desktop --icon-file=UnCSO2.png --plugin qt --output appimage
 
     if ($isGccBuild) {
-        Move-Item *.AppImage -Destination "UnCSO2-$versionStr-linux64_gcc.AppImage"
+        Move-Item *.AppImage -Destination "../UnCSO2-$versionStr-linux64_gcc.AppImage"
     }
     elseif ($isClangBuild) {
-        Move-Item *.AppImage -Destination "UnCSO2-$versionStr-linux64_clang.AppImage"
+        Move-Item *.AppImage -Destination "../UnCSO2-$versionStr-linux64_clang.AppImage"
     }
 
     Pop-Location
