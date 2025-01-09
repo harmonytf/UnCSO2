@@ -63,20 +63,18 @@ jobs:
     - name: Create Qt dir on Linux and install deps
       if: matrix.os != 'windows-latest'
       run: |
-        sudo mkdir /Qt
-        sudo chmod 777 /Qt
         sudo add-apt-repository universe
         sudo apt install libfuse2
 
     - name: Install Qt
-      uses: jurplel/install-qt-action@master
+      uses: jurplel/install-qt-action@v4
       with:
         version:      ${{ env.QT_VERSION }}
         host:         ${{ env.QT_HOST }}
         target:       desktop
         arch:         ${{ env.QT_ARCH }}
         #dir:          ${{ runner.temp }}
-        dir:          '/'
+        #dir:          '/'
         setup-python: false
 
     - name: Configure CMake
