@@ -64,7 +64,7 @@ jobs:
       if: matrix.os != 'windows-latest'
       run: |
         sudo add-apt-repository universe
-        sudo apt install libfuse2
+        sudo apt-get install libfuse2
 
     - name: Install Qt
       uses: jurplel/install-qt-action@v4
@@ -108,5 +108,5 @@ jobs:
         name: package-${{ matrix.c_compiler }}-${{ matrix.os }}
         path: |
           build/package/
-          build/*.7z
-          build/*.AppImage
+          UnCSO2-*.7z
+          UnCSO2-*.AppImage

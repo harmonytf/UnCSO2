@@ -115,10 +115,10 @@ elseif ($isWindows) {
     Pop-Location
 
     #if ($isMingwBuild) {       
-    #    7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on "UnCSO2-$versionStr-win64_mingw.7z" ./package/*
+    #    7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on "../UnCSO2-$versionStr-win64_mingw.7z" ./package/*
     #}
     #elseif ($isMsvcBuild) {       
-        7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on "UnCSO2-$versionStr-win64_msvc.7z" ./package/*
+        7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on "../UnCSO2-$versionStr-win64_msvc.7z" ./package/*
     #}
 }
 
