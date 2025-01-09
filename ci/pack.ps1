@@ -70,7 +70,6 @@ $versionStr = Get-Content -Path ./version.txt -TotalCount 1
 Write-Host "UnCSO2 version: $versionStr"
 
 Push-Location ./build
-Push-Location ./package
 
 if ($isLinux) {
     # retrieve deployment tool
@@ -80,18 +79,18 @@ if ($isLinux) {
     chmod a+x linuxdeploy-plugin-qt-x86_64.AppImage
 
     $env:VERSION = $versionStr;
-    ./linuxdeploy-x86_64.AppImage --appdir=./ --desktop-file=UnCSO2.desktop --icon-file=UnCSO2.png --plugin qt --output appimage
+    ./linuxdeploy-x86_64.AppImage --appdir=./package/ --library=./package/libuncso2.so --executable=./package/uc2 --desktop-file=./package/UnCSO2.desktop --icon-file=./package/UnCSO2.png --plugin qt --output appimage
 
     if ($isGccBuild) {
-        Move-Item *.AppImage -Destination "../UnCSO2-$versionStr-linux64_gcc.AppImage"
+        Move-Item UnCSO2*.AppImage -Destination "../UnCSO2-$versionStr-linux64_gcc.AppImage"
     }
     elseif ($isClangBuild) {
-        Move-Item *.AppImage -Destination "../UnCSO2-$versionStr-linux64_clang.AppImage"
+        Move-Item UnCSO2*.AppImage -Destination "../UnCSO2-$versionStr-linux64_clang.AppImage"
     }
-
-    Pop-Location
 }
 elseif ($isWindows) {
+    Push-Location ./package
+
     $windeployBin = ''
 
     if ($env:QT_ROOT_DIR) {
