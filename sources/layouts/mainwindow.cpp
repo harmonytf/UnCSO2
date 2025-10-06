@@ -284,7 +284,7 @@ void CMainWindow::SetLoadedFilename( std::string_view filename /*= {}*/ )
 
     if ( filename.empty() == false )
     {
-        formattedTitle.prepend( QStringLiteral( " - " ) );
+        formattedTitle.prepend( QStringLiteral( " — " ) );
         formattedTitle.prepend( filename.data() );
     }
 
