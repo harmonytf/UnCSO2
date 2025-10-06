@@ -58,9 +58,7 @@
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #3b222b;
-border: 2px solid #da4453; 
-border-radius: 5px;</string>
+       <string notr="true">QFrame { background-color: #3b222b; border: 2px solid #da4453; border-radius: 5px; }</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::Shape::NoFrame</enum>
@@ -87,8 +85,7 @@ border-radius: 5px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: #3b222b;
-border:  0; </string>
+          <string notr="true">color: #ffffff; border: 0;</string>
          </property>
          <property name="verticalScrollBarPolicy">
           <enum>Qt::ScrollBarPolicy::ScrollBarAlwaysOff</enum>
@@ -138,8 +135,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color: #3b222b;
-border:  0; </string>
+          <string notr="true">color: #ffffff;</string>
          </property>
          <property name="text">
           <string>...</string>
@@ -154,7 +150,7 @@ border:  0; </string>
           <bool>false</bool>
          </property>
          <property name="autoRaise">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
         </widget>
        </item>
