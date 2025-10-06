@@ -18,11 +18,11 @@ You may download the latest build of UnCSO2 [here](https://github.com/harmonytf/
 
 Aside from extracting files from Counter-Strike: Online 2's and Titanfall Online's proprietary archive format, PKG, UnCSO2 can:
 
-- Explore and extract from individual PKG archives;
-- Explore and extract from entire game's filesystems (loads every PKG archive in their PKG index);
-- Preview and/or extract individual file entries;
-- Decrypt Counter-Strike: Online 2 files with an `.e*` prepended in their extension;
-- Decompress Counter-Strike: Online 2 texture files.
+- Explore and extract from individual PKG archives
+- Explore and extract from entire game's filesystem (loads every PKG archive in their PKG index)
+- Preview and/or extract individual file entries
+- Decrypt Counter-Strike: Online 2 files with an `.e*` prepended in their extension
+- Decompress Counter-Strike: Online 2 texture files
 
 ### Compatible CSO2 regions
 
@@ -35,7 +35,7 @@ Those regions are: South Korea, China, Taiwan and Japan.
 ### Requirements
 
 - [CMake](https://cmake.org/download/) (must be in PATH)
-- [Qt 6.8](https://www.qt.io/download)
+- [Qt 6.9](https://www.qt.io/download)
 - A C++20 compile.
 
 #### With Visual Studio (new way)

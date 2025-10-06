@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2025 Harmony project contributors -->
+<component type="desktop-application">
+  <id>tf.harmony.UnCSO2</id>
+  <developer id="tf.harmony">
+    <name>Harmony</name>
+  </developer>
+  <launchable type="desktop-id">tf.harmony.UnCSO2.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <name>UnCSO2</name>
+  <summary>Extract Counter-Strike: Online 2 and Titanfall Online game files</summary>
+  <description>
+    <p>A file data extractor for the video games Counter Strike: Online 2 and Titanfall Online.</p>
+    <p>Aside from extracting files from Counter-Strike: Online 2's and Titanfall Online's proprietary archive format, PKG, UnCSO2 can:</p>
+    <ul>
+      <li>Explore and extract from individual PKG archives</li>
+      <li>Explore and extract from entire game's filesystem (loads every PKG archive in their PKG index)</li>
+      <li>Preview and/or extract individual file entries</li>
+      <li>Decrypt Counter-Strike: Online 2 files with an <code>.e*</code> prepended in their extension</li>
+      <li>Decompress Counter-Strike: Online 2 texture files</li>
+    </ul>
+    <p>UnCSO2 supports every Counter-Strike: Online 2 region's game data. Those regions are: South Korea, China, Taiwan and Japan.</p>
+  </description>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <url type="homepage">https://github.com/harmonytf/UnCSO2</url>
+  <url type="bugtracker">https://github.com/harmonytf/UnCSO2/issues</url>
+  <url type="vcs-browser">https://github.com/harmonytf/UnCSO2</url>
+  <content_rating type="oars-1.1"/>
+  <branding>
+    <color type="primary">#2e65ff</color>
+  </branding>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/harmonytf/UnCSO2/master/screenshots/screenshot1.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://raw.githubusercontent.com/harmonytf/UnCSO2/master/screenshots/screenshot2.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://raw.githubusercontent.com/harmonytf/UnCSO2/master/screenshots/screenshot3.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://raw.githubusercontent.com/harmonytf/UnCSO2/master/screenshots/screenshot4.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="2.1.1" date="2025-10-06" />
+    <release version="2.1.0" date="2025-01-09">
+      <description>
+        <p>New Harmony release!</p>
+        <ul>
+          <li>fixed Titanfall Online support (notably no longer has problems with the infamous big shader file)</li>
+          <li>upgraded to Qt 6</li>
+          <li>fixed Linux AppImage</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

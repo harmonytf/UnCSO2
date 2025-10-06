@@ -23,6 +23,7 @@ void CUnCSO2App::SetupSettingsInfo()
     this->setOrganizationName( "Harmony" );
     this->setOrganizationDomain( "harmony.tf" );
     this->setApplicationName( "UnCSO2" );
+    this->setDesktopFileName( "tf.harmony.UnCSO2" );
     this->setApplicationVersion( QStringLiteral( UNCSO2_VERSION ) );
 }
 

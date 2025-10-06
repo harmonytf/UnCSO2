@@ -17,7 +17,7 @@ $isGccBuild = $curCompiler -eq 'gcc'
 $isClangBuild = $curCompiler -eq 'clang'
 #$isMingwBuild = $curBuildCombo -eq 'windows-mingw'
 #$isMsvcBuild = $curBuildCombo -eq 'windows-msvc'
-$qtVersion = if ($env:QT_VERSION) { $env:QT_VERSION } else { "6.8.0" };
+$qtVersion = if ($env:QT_VERSION) { $env:QT_VERSION } else { "6.9.0" };
 
 Write-Host "Running packaging script..."
 Write-Host "Current setup build combo is: $curBuildCombo"
@@ -33,7 +33,7 @@ if ($isLinux) {
     #Copy-Item ./build/libuncso2/external/cryptopp/libcryptopp.so* -Destination ./build/package/
 
     # copy AppImage prebuilt files
-    Copy-Item ./appimage/* -Destination ./build/package/
+    Copy-Item ./tf.harmony.UnCSO2.* -Destination ./build/package/
     
     # copy uncso2 itself to the package dir
     Copy-Item ./build/uc2 -Destination ./build/package/
@@ -79,13 +79,13 @@ if ($isLinux) {
     chmod a+x linuxdeploy-plugin-qt-x86_64.AppImage
 
     $env:VERSION = $versionStr;
-    ./linuxdeploy-x86_64.AppImage --appdir=./package/ --library=./package/libuncso2.so --executable=./package/uc2 --desktop-file=./package/UnCSO2.desktop --icon-file=./package/UnCSO2.png --plugin qt --output appimage
+    ./linuxdeploy-x86_64.AppImage --appdir=./package/ --library=./package/libuncso2.so --executable=./package/uc2 --desktop-file=./package/tf.harmony.UnCSO2.desktop --icon-file=./package/tf.harmony.UnCSO2.svg --plugin qt --output appimage
 
     if ($isGccBuild) {
-        Move-Item UnCSO2*.AppImage -Destination "../UnCSO2-$versionStr-linux64_gcc.AppImage"
+        Move-Item UnCSO2*.AppImage -Destination "../UnCSO2-$versionStr-linux-x86_64-gcc.AppImage"
     }
     elseif ($isClangBuild) {
-        Move-Item UnCSO2*.AppImage -Destination "../UnCSO2-$versionStr-linux64_clang.AppImage"
+        Move-Item UnCSO2*.AppImage -Destination "../UnCSO2-$versionStr-linux-x86_64-clang.AppImage"
     }
 }
 elseif ($isWindows) {
@@ -115,10 +115,10 @@ elseif ($isWindows) {
     Pop-Location
 
     #if ($isMingwBuild) {       
-    #    7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on "../UnCSO2-$versionStr-win64_mingw.7z" ./package/*
+    #    7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on "../UnCSO2-$versionStr-windows-x86_64_mingw.7z" ./package/*
     #}
     #elseif ($isMsvcBuild) {       
-        7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on "../UnCSO2-$versionStr-win64_msvc.7z" ./package/*
+        7z a -t7z -m0=lzma2 -mx=9 -mfb=64 -md=64m -ms=on "../UnCSO2-$versionStr-windows-x86_64_msvc.7z" ./package/*
     #}
 }
 

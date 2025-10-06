@@ -410,3 +410,7 @@ CMakeLists.txt.user*
 *.AppImage
 
 /CMakeUserPresets.json
+
+/.flatpak-builder
+/repo
+/builddir

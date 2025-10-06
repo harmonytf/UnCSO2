@@ -1,5 +1,5 @@
 <RCC>
     <qresource prefix="/icons">
-        <file>uncso2.svg</file>
+        <file alias="uncso2.svg">../tf.harmony.UnCSO2.svg</file>
     </qresource>
 </RCC>
