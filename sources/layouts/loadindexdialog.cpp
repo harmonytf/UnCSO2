@@ -1,6 +1,7 @@
 #include "loadindexdialog.hpp"
 
 #include <QFileDialog>
+#include <QProcessEnvironment>
 
 #include "mainwindow.hpp"
 
@@ -20,6 +21,17 @@ CLoadIndexDialog::CLoadIndexDialog( CMainWindow* pParent /*= nullptr*/ )
                    SLOT( close() ) );
 
     this->buttonBox->button( QDialogButtonBox::Ok )->setEnabled( false );
+
+    if ( QProcessEnvironment::systemEnvironment()
+        .contains( QStringLiteral( "FLATPAK_ID" ) ) )
+    {
+        // On Flatpak one cannot manually enter a path from host,
+        // so by default block text entry (only in constructor, so that
+        // if the user wipes the field contents later manually, they'll
+        // still be able to input something manually from then on)
+        this->leGameDir->setEnabled( false );
+        this->OnGameDirLineEdited( this->leGameDir->text() );
+    }
 }
 
 void CLoadIndexDialog::OnBrowseGameDir()
@@ -34,6 +46,10 @@ void CLoadIndexDialog::OnBrowseGameDir()
 
     this->leGameDir->setText( szDirPath );
 
+    // Allow adjusting the line again if it was previously disabled for Flatpak
+    // (the user will now see the paths are sandboxed).
+    this->leGameDir->setEnabled( true );
+
     this->UpdateGameProviderLabel( szDirPath.toStdString() );
 }
 
@@ -41,7 +57,20 @@ void CLoadIndexDialog::OnGameDirLineEdited( const QString& text )
 {
     if ( text.isEmpty() == true )
     {
-        this->lblDetectStatus->setText( tr( "No directory selected." ) );
+        if ( QProcessEnvironment::systemEnvironment()
+            .contains( QStringLiteral( "FLATPAK_ID" ) ) )
+        {
+            // On Flatpak one cannot manually enter a path from host,
+            // so by default block text entry and use a different text.
+            this->lblDetectStatus->setText( tr( "No directory selected. "
+                "Select a directory by clicking \"Browse\"." ) );
+        }
+        else
+        {
+            this->lblDetectStatus->setText( tr( "No directory selected." ) );
+        }
+
+        this->buttonBox->button( QDialogButtonBox::Ok )->setEnabled( false );
         return;
     }
 
