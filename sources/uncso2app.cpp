@@ -29,6 +29,9 @@ void CUnCSO2App::SetupSettingsInfo()
     this->setApplicationName( "UnCSO2" );
     this->setDesktopFileName( "tf.harmony.UnCSO2" );
     this->setApplicationVersion( QStringLiteral( UNCSO2_VERSION ) );
+#ifdef _WIN32
+    this->setWindowIcon( QIcon( QStringLiteral( ":/icons/uncso2.svg" ) ) );
+#endif
 }
 
 bool CUnCSO2App::ShouldLoadOwnIcons()
