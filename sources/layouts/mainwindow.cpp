@@ -12,6 +12,8 @@
 #include <QMenu>
 #include <QMimeData>
 #include <QSettings>
+#include <QDir>
+#include <QProcessEnvironment>
 
 #include "aboutdialog.hpp"
 #include "fileproperties.hpp"
@@ -42,6 +44,7 @@ CMainWindow::CMainWindow( QWidget* pParent )
       m_bShouldDecrypt( true ), m_bShouldDecompress( true )
 {
     this->SetLoadedFilename();
+    this->SetTempDir();
 
     this->treeView->setModel( &this->m_Model );
 
@@ -289,6 +292,32 @@ void CMainWindow::SetLoadedFilename( std::string_view filename /*= {}*/ )
     }
 
     this->setWindowTitle( formattedTitle );
+}
+
+void CMainWindow::SetTempDir()
+{
+    QString tempPath = QDir::tempPath();
+    QProcessEnvironment systemEnv = QProcessEnvironment::systemEnvironment();
+
+    if ( systemEnv.contains( QStringLiteral( "XDG_RUNTIME_DIR" ) )
+        && systemEnv.contains( QStringLiteral( "FLATPAK_ID" ) ) )
+    {
+        QString xdgRuntimeDir = systemEnv.value( QStringLiteral( "XDG_RUNTIME_DIR" ) );
+        QString flatpakId = systemEnv.value( QStringLiteral( "FLATPAK_ID" ) );
+    
+        if ( !xdgRuntimeDir.isEmpty() && !flatpakId.isEmpty() )
+        {
+            tempPath = xdgRuntimeDir;
+            tempPath.append( QStringLiteral( "/app/" ) );
+            tempPath.append( flatpakId );
+        }
+    }
+    
+    tempPath.append( QStringLiteral( "/" ) );
+    tempPath.append( QCoreApplication::applicationName() );
+    tempPath.append( QStringLiteral( "-XXXXXX" ) );
+
+    this->m_TempDir = QTemporaryDir(tempPath);
 }
 
 void CMainWindow::LoadPackage(
@@ -700,6 +729,7 @@ void CMainWindow::OnPreviewClick()
 
     QString convertedFilePath =
         QString::fromStdString( outFilePath.generic_string() );
+    convertedFilePath.prepend("file://");
 
     const bool bUrlOpened =
         QDesktopServices::openUrl( QUrl( convertedFilePath ) );
@@ -804,6 +834,7 @@ void CMainWindow::OnItemDoubleClicked( const QModelIndex& index )
 
     QString convertedFilePath =
         QString::fromStdString( outFilePath.generic_string() );
+    convertedFilePath.prepend("file://");
 
     const bool bUrlOpened =
         QDesktopServices::openUrl( QUrl( convertedFilePath ) );

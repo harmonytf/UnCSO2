@@ -64,6 +64,7 @@ private:
     void SetWidgetsEnabled( bool bEnabled );
     void SetArchiveOptionsEnabled( bool bEnabled );
     void SetLoadedFilename( std::string_view filename = {} );
+    void SetTempDir();
 
     void LoadPackage( const fs::path& pkgPath,
                       GameProvider provider = GameProvider::Unknown );

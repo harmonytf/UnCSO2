@@ -8,8 +8,6 @@ finish-args:
   - --socket=fallback-x11
   - --share=ipc
   - --device=dri
-  - --filesystem=host
-  - --filesystem=/tmp
 modules:
   - name: uc2
     buildsystem: cmake-ninja
