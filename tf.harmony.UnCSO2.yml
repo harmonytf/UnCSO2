@@ -32,5 +32,6 @@ modules:
       - install -Dm644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
       - install -Dm644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - install -Dm644 ${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
+      #- install -Dm644 ${FLATPAK_ID}-mime.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}-mime.xml
       - install -Dm755 ${FLATPAK_BUILDER_BUILDDIR}/uc2 ${FLATPAK_DEST}/bin/uc2
       - install -Dm755 -t ${FLATPAK_DEST}/lib/ ${FLATPAK_BUILDER_BUILDDIR}/libuncso2/libuncso2.so*
