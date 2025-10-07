@@ -21,7 +21,12 @@ ErrorBoxWidget::ErrorBoxWidget( gsl::not_null<QFrame*> frame,
 void ErrorBoxWidget::SetMessage( const QString& message,
                                  const QString& errorDetails /*= QString() */ )
 {
-    auto formattedHtml = tr( "<p>%1." ).arg( message );
+    auto formattedHtml = tr( "<p>%1" ).arg( message );
+
+    if ( formattedHtml.endsWith( '.' ) == false )
+    {
+        formattedHtml.append( '.' );
+    }
 
     if ( errorDetails.isEmpty() == false )
     {
