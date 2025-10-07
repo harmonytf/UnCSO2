@@ -606,6 +606,56 @@ void CMainWindow::ShowError( const QString& message, const QString& details )
     this->m_ErrorBoxWidget.SetVisible( true );
 }
 
+// Externally commanded to open a path, might be a directory or file
+void CMainWindow::OpenPath( fs::path path )
+{
+    if ( fs::exists( path ) == false )
+    {
+        QString convertedPath = QString::fromStdString( path.generic_string() );
+        this->ShowError( tr( "Could not open non-existent path <code>%1</code>.")
+                .arg( convertedPath ),
+            this->m_Model.GetError() );
+        return;
+    }
+
+    path = fs::canonical( path );
+
+    if ( fs::is_directory( path ) )
+    {
+        GameDataInfo detectedGameInfo{};
+        detectedGameInfo.SetGameDataPath( path );
+
+        if ( detectedGameInfo.WasGameDetected() == false )
+        {
+            fs::path path_data = path / "Data";
+            if ( fs::exists( path_data ) && fs::is_directory( path_data ) )
+            {
+                path = path_data;
+                detectedGameInfo.SetGameDataPath( path_data );
+            }
+        }
+
+        if ( detectedGameInfo.WasGameDetected() == false )
+        {
+            QString convertedPath = QString::fromStdString( path.generic_string() );
+            this->ShowError( tr( "Could not detect any compatible game in the directory "
+                "(<code>%1</code>)." ).arg( convertedPath ),
+                this->m_Model.GetError() );
+        }
+        else
+        {
+            this->OnIndexFileAccepted( detectedGameInfo );
+        }
+    }
+    else
+    {
+        this->m_LastOpenDir =
+            QString::fromStdString( path.parent_path().generic_string() );
+
+        this->LoadPackage( path );
+    }
+}
+
 void CMainWindow::OnFileOpen()
 {
     const fs::path filePath =

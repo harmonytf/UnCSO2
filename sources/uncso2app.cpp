@@ -15,6 +15,10 @@ CUnCSO2App::CUnCSO2App( int& argc, char** argv ) : QApplication( argc, argv )
     }
 
     this->m_pMainWindow = std::make_unique<CMainWindow>();
+    if ( argc > 1 && argv[argc - 1][0] )
+    {
+        this->m_pMainWindow->OpenPath( fs::path( argv[argc - 1] ) );
+    }
     this->m_pMainWindow->show();
 }
 

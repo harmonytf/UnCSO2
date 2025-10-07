@@ -45,6 +45,7 @@ public:
 
 public:
     void OnIndexFileAccepted( GameDataInfo info );
+    void OpenPath( fs::path path );
 
 protected:
     virtual void closeEvent( QCloseEvent* event ) override;
