@@ -41,6 +41,7 @@ CMainWindow::CMainWindow( QWidget* pParent )
       m_ErrorBoxWidget( this->errorBox, this->errorBoxMsg, this->errorBoxBtn ),
       m_StatusWidget( this->lblStatus, this->pbStatus ),
       m_LastOpenDir( QDir::homePath() ), m_LastExtractDir( QDir::homePath() ),
+      m_LastIndexDir( QDir::homePath() ),
       m_bShouldDecrypt( true ), m_bShouldDecompress( true )
 {
     this->SetLoadedFilename();
@@ -96,6 +97,7 @@ void CMainWindow::OnIndexFileAccepted( GameDataInfo info )
 
     // FIXME: index entry is loaded as a package
     // this->AddToRecentFiles( info.GetGameDataPath() );
+    this->m_LastIndexDir = QString::fromStdString( info.GetGameDataPath().generic_string() );
     this->SetLoadedFilename( info.GetGameDataPath().generic_string() );
 }
 
@@ -537,6 +539,11 @@ void CMainWindow::ValidateLastDirs()
     {
         this->m_LastExtractDir = QDir::homePath();
     }
+
+    if ( fs::is_directory( this->m_LastIndexDir.toStdString() ) == false )
+    {
+        this->m_LastIndexDir = {};
+    }
 }
 
 void CMainWindow::LoadSettings()
@@ -571,6 +578,8 @@ void CMainWindow::LoadSettings()
         settings.value( QStringLiteral( "lastopendir" ) ).toString();
     this->m_LastExtractDir =
         settings.value( QStringLiteral( "lastextractdir" ) ).toString();
+    this->m_LastIndexDir =
+        settings.value( QStringLiteral( "lastindexdir" ) ).toString();
     settings.endGroup();
 
     this->PostLoadSettings();
@@ -610,6 +619,8 @@ void CMainWindow::SaveSettings()
     settings.setValue( QStringLiteral( "lastopendir" ), this->m_LastOpenDir );
     settings.setValue( QStringLiteral( "lastextractdir" ),
                        this->m_LastExtractDir );
+    settings.setValue( QStringLiteral( "lastindexdir" ),
+                       this->m_LastIndexDir );
     settings.endGroup();
 }
 
@@ -690,7 +701,7 @@ void CMainWindow::OnFileOpen()
 
 void CMainWindow::OnIndexFileOpen()
 {
-    CLoadIndexDialog( this ).exec();
+    CLoadIndexDialog( this, this->m_LastIndexDir ).exec();
 }
 
 void CMainWindow::OnRecentFileOpen()

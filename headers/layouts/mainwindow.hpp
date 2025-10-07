@@ -123,6 +123,7 @@ private:
 
     QString m_LastOpenDir;
     QString m_LastExtractDir;
+    QString m_LastIndexDir;
 
     bool m_bShouldDecrypt;
     bool m_bShouldDecompress;

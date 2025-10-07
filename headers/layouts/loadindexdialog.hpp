@@ -15,7 +15,7 @@ class CLoadIndexDialog : public QDialog, public Ui::LoadIndexDialog
     Q_OBJECT
 
 public:
-    CLoadIndexDialog( CMainWindow* pParent = nullptr );
+    CLoadIndexDialog( CMainWindow* pParent, const QString& lastIndexDir = {} );
 
 private slots:
     void OnBrowseGameDir();
@@ -28,4 +28,5 @@ private:
 
 private:
     GameDataInfo m_DetectedGameInfo;
+    QString m_LastIndexDir;
 };

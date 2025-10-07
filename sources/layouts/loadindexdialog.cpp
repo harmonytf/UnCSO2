@@ -5,8 +5,8 @@
 
 #include "mainwindow.hpp"
 
-CLoadIndexDialog::CLoadIndexDialog( CMainWindow* pParent /*= nullptr*/ )
-    : QDialog( pParent ), m_DetectedGameInfo()
+CLoadIndexDialog::CLoadIndexDialog( CMainWindow* pParent, const QString& lastIndexDir /*= {}*/ )
+    : QDialog( pParent ), m_LastIndexDir( lastIndexDir ), m_DetectedGameInfo()
 {
     this->setupUi( this );
 
@@ -22,7 +22,12 @@ CLoadIndexDialog::CLoadIndexDialog( CMainWindow* pParent /*= nullptr*/ )
 
     this->buttonBox->button( QDialogButtonBox::Ok )->setEnabled( false );
 
-    if ( QProcessEnvironment::systemEnvironment()
+    if ( this->m_LastIndexDir.isEmpty() == false
+        && fs::is_directory( this->m_LastIndexDir.toStdString() ) == true )
+    {
+        this->leGameDir->setText( this->m_LastIndexDir );
+    }
+    else if ( QProcessEnvironment::systemEnvironment()
         .contains( QStringLiteral( "FLATPAK_ID" ) ) )
     {
         // On Flatpak one cannot manually enter a path from host,
@@ -30,14 +35,22 @@ CLoadIndexDialog::CLoadIndexDialog( CMainWindow* pParent /*= nullptr*/ )
         // if the user wipes the field contents later manually, they'll
         // still be able to input something manually from then on)
         this->leGameDir->setEnabled( false );
-        this->OnGameDirLineEdited( this->leGameDir->text() );
     }
+
+    this->OnGameDirLineEdited( this->leGameDir->text() );
 }
 
 void CLoadIndexDialog::OnBrowseGameDir()
 {
+    QString dir = QDir::homePath();
+    if ( this->m_LastIndexDir.isEmpty() == false
+        && fs::is_directory( this->m_LastIndexDir.toStdString() ) == true )
+    {
+        dir = this->m_LastIndexDir;
+    }
+
     QString szDirPath = QFileDialog::getExistingDirectory(
-        this, tr( "Select the game's directory" ), QDir::homePath() );
+        this, tr( "Select the game's directory" ), dir );
 
     if ( szDirPath.isEmpty() == true )
     {
