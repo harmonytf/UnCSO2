@@ -541,16 +541,23 @@ void CMainWindow::ValidateLastDirs()
 
 void CMainWindow::LoadSettings()
 {
+    QSettings::setDefaultFormat( QSettings::IniFormat );
     QSettings settings;
-    settings.setDefaultFormat( QSettings::IniFormat );
 
     settings.beginGroup( QStringLiteral( "mainwindow" ) );
     this->setGeometry(
         settings.value( QStringLiteral( "geometry" ), this->geometry() )
             .value<QRect>() );
-    this->m_RecentFileNames =
-        settings.value( QStringLiteral( "recentfiles" ) ).toStringList();
     settings.endGroup();
+
+    this->m_RecentFileNames.clear();
+    int size = settings.beginReadArray( QStringLiteral( "recentfiles" ) );
+    for (int i = 0; i < size; ++i)
+    {
+        settings.setArrayIndex( i );
+        this->m_RecentFileNames.append( settings.value( QStringLiteral( "path" ) ).toString() );
+    }
+    settings.endArray();
 
     settings.beginGroup( QStringLiteral( "settings" ) );
     this->actionDecrypt_e_files->setChecked(
@@ -577,14 +584,20 @@ void CMainWindow::PostLoadSettings()
 
 void CMainWindow::SaveSettings()
 {
+    QSettings::setDefaultFormat( QSettings::IniFormat );
     QSettings settings;
-    settings.setDefaultFormat( QSettings::IniFormat );
 
     settings.beginGroup( QStringLiteral( "mainwindow" ) );
     settings.setValue( QStringLiteral( "geometry" ), this->geometry() );
-    settings.setValue( QStringLiteral( "recentfiles" ),
-                       this->m_RecentFileNames );
     settings.endGroup();
+
+    settings.beginWriteArray( QStringLiteral( "recentfiles" ) );
+    for (int i = 0; i < this->m_RecentFileNames.size(); ++i)
+    {
+        settings.setArrayIndex( i );
+        settings.setValue( QStringLiteral( "path" ), this->m_RecentFileNames.at(i) );
+    }
+    settings.endArray();
 
     settings.beginGroup( QStringLiteral( "settings" ) );
     settings.setValue( QStringLiteral( "decryptedfiles" ),
