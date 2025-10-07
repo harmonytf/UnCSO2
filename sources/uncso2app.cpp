@@ -29,13 +29,13 @@ void CUnCSO2App::SetupSettingsInfo()
 
 bool CUnCSO2App::ShouldLoadOwnIcons()
 {
-    QString sampleIconName = QStringLiteral( "document-open" );
+    QString sampleIconName = QStringLiteral( "archive-extract" );
     return QIcon::hasThemeIcon( sampleIconName ) == false;
 }
 
 void CUnCSO2App::LoadOwnIcons()
 {
-    qDebug() << "Theme doesn't have the 'document-open' icon, loading our "
+    qDebug() << "Theme doesn't have the 'archive-extract' icon, loading our "
                 "own icons";
 
     auto iconsResourceFilename = QStringLiteral( "/icons-breeze.rcc" );
