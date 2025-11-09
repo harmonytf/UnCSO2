@@ -1,7 +1,7 @@
 pkgname=uncso2
 pkgver=2.1.1
 pkgrel=1
-pkgdesc='Extract Counter-Strike: Online 2 and Titanfall Online game files'
+pkgdesc="Extract Counter-Strike: Online 2 and Titanfall Online game files"
 arch=(any)
 url="https://github.com/harmonytf/UnCSO2"
 license=(GPL-3.0-only)

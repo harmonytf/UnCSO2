@@ -22,7 +22,7 @@ jobs:
       # To add more build types (Release, Debug, RelWithDebInfo, etc.) customize the build_type list.
       matrix:
         os: [ubuntu-latest, windows-latest]
-        build_type: [RelWithDebInfo]
+        build_type: [Release]
         c_compiler: [gcc, clang, cl]
         include:
           - os: windows-latest
@@ -112,7 +112,16 @@ jobs:
           UnCSO2-*.AppImage
 
     - name: Install
-      run: DESTDIR="build/install/" cmake --install build
+      run: |
+        DESTDIR="build/install/" cmake --install build
+        install -Dm644 "COPYING" -t "build/install/share/licenses/uncso2"
+        install -Dm644 "libuncso2/COPYING" -t "build/install/share/licenses/libuncso2"
+        rm -rf "build/install/bin/cryptest"
+        rm -rf "build/install/include/cryptopp"
+        rm -rf "build/install/lib/libcryptopp.a"
+        rm -rf "build/install/share/cmake"
+        rm -rf "build/install/share/cryptopp"
+        rm -rf "build/install/share/pkgconfig/cryptopp.pc"
 
     - name: Upload install artifacts
       uses: actions/upload-artifact@v4
