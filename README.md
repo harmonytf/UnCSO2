@@ -12,7 +12,7 @@ It uses [libuncso2](https://github.com/harmonytf/libuncso2) as the back-end libr
 
 ## Download
 
-You may download the latest build of UnCSO2 [here](https://github.com/harmonytf/UnCSO2/releases/latest).
+You may download the latest build of UnCSO2 here: [Releases](https://github.com/harmonytf/UnCSO2/releases/latest).
 
 ## Features
 
@@ -35,7 +35,7 @@ Those regions are: South Korea, China, Taiwan and Japan.
 ### Requirements
 
 - [CMake](https://cmake.org/download/) (must be in PATH)
-- [Qt 6.9](https://www.qt.io/download)
+- [Qt 6.10](https://www.qt.io/download)
 - A C++20 compile.
 
 #### With Visual Studio (new way)

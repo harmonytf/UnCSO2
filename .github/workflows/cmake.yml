@@ -44,7 +44,7 @@ jobs:
 
     env:
       CI_COMPILER: ${{ matrix.c_compiler }}
-      QT_VERSION: '6.9.3'
+      QT_VERSION: '6.10.0'
       QT_HOST: ${{ matrix.os == 'windows-latest' && 'windows' || 'linux' }}
       QT_ARCH: ${{ matrix.os == 'windows-latest' && 'win64_msvc2022_64' || 'linux_gcc_64' }}
 

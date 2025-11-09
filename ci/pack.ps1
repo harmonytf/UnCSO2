@@ -17,7 +17,7 @@ $isGccBuild = $curCompiler -eq 'gcc'
 $isClangBuild = $curCompiler -eq 'clang'
 #$isMingwBuild = $curBuildCombo -eq 'windows-mingw'
 #$isMsvcBuild = $curBuildCombo -eq 'windows-msvc'
-$qtVersion = if ($env:QT_VERSION) { $env:QT_VERSION } else { "6.9.0" };
+$qtVersion = if ($env:QT_VERSION) { $env:QT_VERSION } else { "6.10.0" };
 
 Write-Host "Running packaging script..."
 Write-Host "Current setup build combo is: $curBuildCombo"

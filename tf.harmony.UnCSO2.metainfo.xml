@@ -47,7 +47,21 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="2.1.1" date="2025-10-06" />
+    <release version="2.1.1" date="2025-11-09">
+      <description>
+        <p>Now also packaged as Flatpak! Changes:</p>
+        <ul>
+          <li>support saving last index dir path</li>
+          <li>fixed recent file list and made it also list directories</li>
+          <li>fixed broken style of error banner (it had unreadable text)</li>
+          <li>fixed blurry window icon on Linux</li>
+          <li>support for Flatpak build on Linux (with fixes around its filesystem sandboxing)</li>
+          <li>minor stylistic corrections here and there</li>
+          <li>add MIME types to allow opening .pkg files or their folders in the app</li>
+          <li>update to Qt 6.10 framework</li>
+        </ul>
+      </description>
+    </release>
     <release version="2.1.0" date="2025-01-09">
       <description>
         <p>New Harmony release!</p>

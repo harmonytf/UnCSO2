@@ -6,11 +6,9 @@ Icon=tf.harmony.UnCSO2
 Comment=Extract Counter-Strike: Online 2 and Titanfall Online game files
 Terminal=false
 Categories=Utility;
-Keywords=pkg;
+Keywords=pkg;Harmony;TFO;
 X-AppImage-Version=2.0.0
 
-# Two problems here:
-# 1. For inode/directory: https://github.com/flatpak/flatpak/issues/6344
-# 2. For .pkg, we have to use application/x-xar, which sucks since it also assigns to .xar,
+# For .pkg, we have to use application/x-xar, which sucks since it also assigns to .xar,
 # but we can't apparently have two distinct MIME types with the same *.pkg glob. Well fuck.
 MimeType=application/x-xar;inode/directory;
