@@ -95,6 +95,35 @@ cmake -G "Ninja" \
 ninja all
 ```
 
+#### Flatpak build
+
+```sh
+flatpak run --command=flathub-build org.flatpak.Builder --install tf.harmony.UnCSO2.yml
+```
+
+Lint:
+
+```sh
+flatpak run --command=flatpak-builder-lint org.flatpak.Builder manifest tf.harmony.UnCSO2.yml
+flatpak run --command=flatpak-builder-lint org.flatpak.Builder repo repo
+```
+
+Single-file bundle (for sharing a dev build):
+
+```sh
+flatpak build-bundle repo UnCSO2.flatpak tf.harmony.UnCSO2 --runtime-repo=https://flathub.org/repo/flathub.flatpakrepo
+```
+
+More information: <https://docs.flatpak.org/en/latest/first-build.html>
+
+#### Arch Linux build
+
+Assuming you cloned to a dir named `UnCSO2`...
+
+```sh
+paru -Bi .
+```
+
 ## Libraries used
 
 UnCSO2 uses the following libraries:

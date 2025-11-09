@@ -20,7 +20,6 @@ modules:
       - /share/cryptopp
       - /include
       - /bin/cryptest
-      - /lib/debug/source
       - '*.a'
     sources:
       - type: dir
@@ -28,10 +27,3 @@ modules:
       #- type: git
       #  url: https://github.com/harmonytf/UnCSO2.git
       #  commit: 34f1d268b5baf0ff983670b33e2f39cec6aa99ab
-    post-install:
-      - install -Dm644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml
-      - install -Dm644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
-      - install -Dm644 ${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
-      #- install -Dm644 ${FLATPAK_ID}-mime.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}-mime.xml
-      - install -Dm755 uncso2 ${FLATPAK_DEST}/bin/uncso2
-      - install -Dm755 libuncso2/libuncso2.so* -t ${FLATPAK_DEST}/lib/

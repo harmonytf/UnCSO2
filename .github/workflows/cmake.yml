@@ -110,3 +110,13 @@ jobs:
           build/package/
           UnCSO2-*.7z
           UnCSO2-*.AppImage
+
+    - name: Install
+      run: DESTDIR="build/install/" cmake --install build
+
+    - name: Upload install artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: install-${{ matrix.c_compiler }}-${{ matrix.os }}
+        path: |
+          build/install/

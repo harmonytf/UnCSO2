@@ -243,3 +243,14 @@ target_link_libraries(uc2 uncso2)
 
 # link Qt6
 target_link_libraries(uc2 Qt::Widgets)
+
+#
+# Installation rules
+#
+
+install(TARGETS uc2 DESTINATION bin)
+
+install(FILES tf.harmony.UnCSO2.desktop DESTINATION share/applications)
+install(FILES tf.harmony.UnCSO2.svg DESTINATION share/icons/hicolor/scalable/apps)
+install(FILES tf.harmony.UnCSO2.metainfo.xml DESTINATION share/metainfo)
+#install(FILES tf.harmony.UnCSO2-mime.xml DESTINATION share/mime/packages)

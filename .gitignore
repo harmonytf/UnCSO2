@@ -406,12 +406,19 @@ CMakeLists.txt.user*
 # CMake build directory
 /build
 
-# appimage executables
+# AppImage executables
 *.AppImage
 
 /CMakeUserPresets.json
 
+# Flatpak
 /.flatpak-builder
 /repo
 /builddir
 *.flatpak
+
+# Arch Linux
+/.SRCINFO
+/src
+/pkg
+*.tar.zst
