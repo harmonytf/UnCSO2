@@ -2,14 +2,14 @@ id: tf.harmony.UnCSO2
 runtime: org.kde.Platform
 runtime-version: '6.10'
 sdk: org.kde.Sdk
-command: uc2
+command: uncso2
 finish-args:
   - --socket=wayland
   - --socket=fallback-x11
   - --share=ipc
   - --device=dri
 modules:
-  - name: uc2
+  - name: uncso2
     buildsystem: cmake-ninja
     #builddir: true
     config-opts:
@@ -33,5 +33,5 @@ modules:
       - install -Dm644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - install -Dm644 ${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
       #- install -Dm644 ${FLATPAK_ID}-mime.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}-mime.xml
-      - install -Dm755 uc2 ${FLATPAK_DEST}/bin/uc2
+      - install -Dm755 uncso2 ${FLATPAK_DEST}/bin/uncso2
       - install -Dm755 libuncso2/libuncso2.so* -t ${FLATPAK_DEST}/lib/

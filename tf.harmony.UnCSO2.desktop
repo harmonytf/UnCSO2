@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=UnCSO2
-Exec=uc2 %f
+Exec=uncso2 %f
 Icon=tf.harmony.UnCSO2
 Comment=Extract Counter-Strike: Online 2 and Titanfall Online game files
 Terminal=false

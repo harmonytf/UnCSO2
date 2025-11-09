@@ -79,7 +79,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOUIC_SEARCH_PATHS "${UNCSO2_ROOT_DIR}/resources/layouts")
 
 #
-# add source files to the project
+# Add source files to the project
 #
 set(UNCSO2_SOURCES_BASE
     "sources/archivebasenode.cpp"
@@ -145,7 +145,8 @@ set(UNCSO2_RESOURCES "resources/icons-uncso2.qrc")
 set(UNCSO2_RESOURCES_BREEZE "resources/icons-breeze.qrc")
 
 set(UNCSO2_RESOURCES_LAYOUTS
-    "resources/layouts/aboutdialog.ui" "resources/layouts/loadindexdialog.ui"
+    "resources/layouts/aboutdialog.ui"
+    "resources/layouts/loadindexdialog.ui"
     "resources/layouts/mainwindow.ui"
     "resources/layouts/pkgpropertiesdialog.ui")
 
@@ -194,6 +195,7 @@ if(WIN32)
 else()
   add_executable(uc2 ${UNCSO2_ALL_SOURCES})
 endif()
+set_target_properties(uc2 PROPERTIES OUTPUT_NAME "uncso2")
 
 # add fallback menu icons
 add_dependencies(uc2 icons-breeze)
@@ -231,7 +233,7 @@ target_include_directories(uc2 PRIVATE "headers/layouts")
 target_include_directories(uc2 PRIVATE ${UNCSO2_GENERATED_DIR})
 
 #
-# link libraries
+# Link libraries
 #
 target_include_directories(uc2 PRIVATE "${UNCSO2_LIB_GSL_DIR}/include")
 
