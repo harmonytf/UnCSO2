@@ -18,10 +18,10 @@ modules:
       - /share/man
       - /share/cmake
       - /share/cryptopp
-      - /include/cryptopp
+      - /include
       - /bin/cryptest
-      - /lib/libcryptopp.a
-      - /lib/debug
+      - /lib/debug/source
+      - '*.a'
     sources:
       - type: dir
         path: .
@@ -33,5 +33,5 @@ modules:
       - install -Dm644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop
       - install -Dm644 ${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg
       #- install -Dm644 ${FLATPAK_ID}-mime.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}-mime.xml
-      - install -Dm755 ${FLATPAK_BUILDER_BUILDDIR}/uc2 ${FLATPAK_DEST}/bin/uc2
-      - install -Dm755 -t ${FLATPAK_DEST}/lib/ ${FLATPAK_BUILDER_BUILDDIR}/libuncso2/libuncso2.so*
+      - install -Dm755 uc2 ${FLATPAK_DEST}/bin/uc2
+      - install -Dm755 libuncso2/libuncso2.so* -t ${FLATPAK_DEST}/lib/

@@ -5,7 +5,7 @@ Exec=uc2 %f
 Icon=tf.harmony.UnCSO2
 Comment=Extract Counter-Strike: Online 2 and Titanfall Online game files
 Terminal=false
-Categories=Utility;
+Categories=Utility;Development;
 Keywords=pkg;Harmony;TFO;
 X-AppImage-Version=2.0.0
 

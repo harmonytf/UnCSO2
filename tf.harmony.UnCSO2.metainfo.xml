@@ -24,7 +24,11 @@
   </description>
   <categories>
     <category>Utility</category>
+    <category>Development</category>
   </categories>
+  <keywords>
+    <keyword translate="no">Qt</keyword>
+  </keywords>
   <url type="homepage">https://github.com/harmonytf/UnCSO2</url>
   <url type="bugtracker">https://github.com/harmonytf/UnCSO2/issues</url>
   <url type="vcs-browser">https://github.com/harmonytf/UnCSO2</url>
@@ -34,16 +38,20 @@
   </branding>
   <screenshots>
     <screenshot type="default">
-      <image type="source">https://raw.githubusercontent.com/harmonytf/UnCSO2/master/screenshots/screenshot1.png</image>
+      <image>https://raw.githubusercontent.com/harmonytf/UnCSO2/78c41bf47b82e2709b8df625e740bd4762d7ecf7/screenshots/screenshot1.png</image>
+      <caption>Main app window, with Titanfall Online data index opened</caption>
     </screenshot>
     <screenshot>
-      <image type="source">https://raw.githubusercontent.com/harmonytf/UnCSO2/master/screenshots/screenshot2.png</image>
+      <image>https://raw.githubusercontent.com/harmonytf/UnCSO2/78c41bf47b82e2709b8df625e740bd4762d7ecf7/screenshots/screenshot2.png</image>
+      <caption>Opening game data by providing the path to a directory of .pkg files</caption>
     </screenshot>
     <screenshot>
-      <image type="source">https://raw.githubusercontent.com/harmonytf/UnCSO2/master/screenshots/screenshot3.png</image>
+      <image>https://raw.githubusercontent.com/harmonytf/UnCSO2/78c41bf47b82e2709b8df625e740bd4762d7ecf7/screenshots/screenshot3.png</image>
+      <caption>Index properties window, with information about the currently opened .pkg file</caption>
     </screenshot>
     <screenshot>
-      <image type="source">https://raw.githubusercontent.com/harmonytf/UnCSO2/master/screenshots/screenshot4.png</image>
+      <image>https://raw.githubusercontent.com/harmonytf/UnCSO2/78c41bf47b82e2709b8df625e740bd4762d7ecf7/screenshots/screenshot4.png</image>
+      <caption>About window</caption>
     </screenshot>
   </screenshots>
   <releases>

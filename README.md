@@ -1,6 +1,12 @@
 # UnCSO2
 
-![Alt text](./resources/uncso2.svg)
+[![GitHub License](https://img.shields.io/github/license/harmonytf/UnCSO2)](https://raw.githubusercontent.com/harmonytf/UnCSO2/master/COPYING)
+![Qt Version](https://img.shields.io/badge/Qt-6.10-2CDE85.svg)
+[![GitHub Release](https://img.shields.io/github/v/release/harmonytf/UnCSO2)](https://github.com/harmonytf/UnCSO2/releases/latest)
+[![AUR Version](https://img.shields.io/aur/version/uncso2-bin?logo=archlinux)](https://aur.archlinux.org/packages/uncso2-bin)
+[![Flathub Version](https://img.shields.io/flathub/v/tf.harmony.UnCSO2?logo=flathub)](https://flathub.org/apps/tf.harmony.UnCSO2)
+
+![App icon](./tf.harmony.UnCSO2.svg)
 
 A file data extractor for the video games Counter Strike: Online 2 and Titanfall Online, for Windows and GNU/Linux.
 
@@ -13,6 +19,8 @@ It uses [libuncso2](https://github.com/harmonytf/libuncso2) as the back-end libr
 ## Download
 
 You may download the latest build of UnCSO2 here: [Releases](https://github.com/harmonytf/UnCSO2/releases/latest).
+
+Linux version is also available on [FlatHub](https://flathub.org/apps/tf.harmony.UnCSO2).
 
 ## Features
 
@@ -36,23 +44,23 @@ Those regions are: South Korea, China, Taiwan and Japan.
 
 - [CMake](https://cmake.org/download/) (must be in PATH)
 - [Qt 6.10](https://www.qt.io/download)
-- A C++20 compile.
+- A C++20 compiler
 
 #### With Visual Studio (new way)
 
 Visual Studio nowadays has built-in integration for CMake projects.
 
-1. File -> Open -> CMake... -> Select CMakeLists.txt
+1. File → Open → CMake... → Select CMakeLists.txt
 
-2. Build -> Build All
+2. Build → Build All
 
 You should have the extension Qt Visual Studio Tools installed. It will prompt you to import your Qt install path upon installation, select required Qt version as the default.
 
-You can generate project files for Visual Studio 15 by running the follwing commands:
-
 #### With Visual Studio (old way)
 
-The old way is to generate project files.
+The old way is to generate project files (sln, vcxproj).
+
+You can generate project files for Visual Studio by running the following commands:
 
 ```sh
 # Create and go to the build directory
@@ -77,10 +85,10 @@ mkdir build
 cd build
 
 # Generate ninja files
-cmake -G "Ninja" `
-        -DCMAKE_CXX_COMPILER="g++" `
-        -DCMAKE_C_COMPILER="gcc" `
-        -DCMAKE_BUILD_TYPE="Release" `
+cmake -G "Ninja" \
+        -DCMAKE_CXX_COMPILER="g++" \
+        -DCMAKE_C_COMPILER="gcc" \
+        -DCMAKE_BUILD_TYPE="RelWithDebInfo" \
         ../
 
 # To build the project
