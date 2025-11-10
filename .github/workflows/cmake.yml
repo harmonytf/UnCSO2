@@ -124,6 +124,7 @@ jobs:
         rm -rf "build/install/share/cmake"
         rm -rf "build/install/share/cryptopp"
         rm -rf "build/install/share/pkgconfig"
+        rm -rf "build/install/usr"
 
     - name: Upload install artifacts
       if: matrix.os != 'windows-latest'
