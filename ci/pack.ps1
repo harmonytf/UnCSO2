@@ -36,7 +36,7 @@ if ($isLinux) {
     Copy-Item ./tf.harmony.UnCSO2.* -Destination ./build/package/
     
     # copy uncso2 itself to the package dir
-    Copy-Item ./build/uc2 -Destination ./build/package/
+    Copy-Item ./build/uncso2 -Destination ./build/package/
 
 }
 elseif ($isWindows) {
@@ -49,7 +49,7 @@ elseif ($isWindows) {
     Copy-Item ./build/libuncso2/*uncso2.dll -Destination ./build/package/
     
     # copy uncso2 itself to the package dir
-    Copy-Item ./build/uc2.exe -Destination ./build/package/
+    Copy-Item ./build/uncso2.exe -Destination ./build/package/
 }
 else {
     Write-Error 'An unknown OS is running this script, implement me.'
@@ -79,7 +79,7 @@ if ($isLinux) {
     chmod a+x linuxdeploy-plugin-qt-x86_64.AppImage
 
     $env:VERSION = $versionStr;
-    ./linuxdeploy-x86_64.AppImage --appdir=./package/ --library=./package/libuncso2.so --executable=./package/uc2 --desktop-file=./package/tf.harmony.UnCSO2.desktop --icon-file=./package/tf.harmony.UnCSO2.svg --plugin qt --output appimage
+    ./linuxdeploy-x86_64.AppImage --appdir=./package/ --library=./package/libuncso2.so --executable=./package/uncso2 --desktop-file=./package/tf.harmony.UnCSO2.desktop --icon-file=./package/tf.harmony.UnCSO2.svg --plugin qt --output appimage
 
     if ($isGccBuild) {
         Move-Item UnCSO2*.AppImage -Destination "../UnCSO2-$versionStr-linux-x86_64-gcc.AppImage"
@@ -102,14 +102,14 @@ elseif ($isWindows) {
 
     #if ($curConfig -eq 'Release') {
     #    if ($isMingwBuild) {
-    #        & $windeployBin ./uc2.exe  
+    #        & $windeployBin ./uncso2.exe  
     #    }
     #    else {
-            & $windeployBin --release ./uc2.exe  
+            & $windeployBin --release ./uncso2.exe  
     #    }
     #}
     #else {       
-    #    & $windeployBin ./uc2.exe  
+    #    & $windeployBin ./uncso2.exe  
     #}
 
     Pop-Location
