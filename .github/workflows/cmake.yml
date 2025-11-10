@@ -86,6 +86,7 @@ jobs:
         -DCMAKE_C_COMPILER=${{ matrix.c_compiler }}
         -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
         -DCMAKE_PREFIX_PATH:PATH="${{ env.QT_ROOT_DIR }}"
+        -DCMAKE_INSTALL_PREFIX=/
         -S ${{ github.workspace }}
 
     - name: Build
@@ -112,6 +113,7 @@ jobs:
           UnCSO2-*.AppImage
 
     - name: Install
+      if: matrix.os != 'windows-latest'
       run: |
         DESTDIR="build/install/" cmake --install build
         install -Dm644 "COPYING" -t "build/install/share/licenses/uncso2"
@@ -121,9 +123,10 @@ jobs:
         rm -rf "build/install/lib/libcryptopp.a"
         rm -rf "build/install/share/cmake"
         rm -rf "build/install/share/cryptopp"
-        rm -rf "build/install/share/pkgconfig/cryptopp.pc"
+        rm -rf "build/install/share/pkgconfig"
 
     - name: Upload install artifacts
+      if: matrix.os != 'windows-latest'
       uses: actions/upload-artifact@v4
       with:
         name: install-${{ matrix.c_compiler }}-${{ matrix.os }}
