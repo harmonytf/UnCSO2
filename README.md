@@ -3,7 +3,8 @@
 [![GitHub License](https://img.shields.io/github/license/harmonytf/UnCSO2)](https://raw.githubusercontent.com/harmonytf/UnCSO2/master/COPYING)
 ![Qt Version](https://img.shields.io/badge/Qt-6.10-2CDE85.svg)
 [![GitHub Release](https://img.shields.io/github/v/release/harmonytf/UnCSO2)](https://github.com/harmonytf/UnCSO2/releases/latest)
-[![AUR Version](https://img.shields.io/aur/version/uncso2-bin?logo=archlinux)](https://aur.archlinux.org/packages/uncso2-bin)
+[![AUR Version](https://img.shields.io/aur/version/uncso2?logo=archlinux)](https://aur.archlinux.org/packages/uncso2)
+[![AUR-BIN Version](https://img.shields.io/aur/version/uncso2-bin?logo=archlinux&label=aur-bin)](https://aur.archlinux.org/packages/uncso2-bin)
 [![Flathub Version](https://img.shields.io/flathub/v/tf.harmony.UnCSO2?logo=flathub)](https://flathub.org/apps/tf.harmony.UnCSO2)
 
 ![App icon](./tf.harmony.UnCSO2.svg)
